@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cqeshse8vqm2h"]
 
-[ext_resource type="PackedScene" uid="uid://canucrp70fxxf" path="res://ressource/lyre.glb" id="1_qb4wj"]
+[ext_resource type="PackedScene" uid="uid://canucrp70fxxf" path="res://ressource/3dFiles/lyre.glb" id="1_qb4wj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8ybpk"]
 size = Vector3(1, 1, 0.001)

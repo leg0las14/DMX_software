@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://crt65t0fi7fly"]
 
-[ext_resource type="PackedScene" uid="uid://c0a6ik3xo5hbe" path="res://ressource/truss.glb" id="1_p8lur"]
+[ext_resource type="PackedScene" uid="uid://c0a6ik3xo5hbe" path="res://ressource/3dFiles/truss.glb" id="1_p8lur"]
 [ext_resource type="Script" path="res://prefab/prefab_script/truss_square_2m.gd" id="2_4jakl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_quchf"]
