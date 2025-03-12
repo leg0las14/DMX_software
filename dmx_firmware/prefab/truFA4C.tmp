@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://crt65t0fi7fly"]
+
+[ext_resource type="PackedScene" uid="uid://c0a6ik3xo5hbe" path="res://ressource/truss.glb" id="1_p8lur"]
+[ext_resource type="Script" path="res://prefab/prefab_script/truss_square_2m.gd" id="2_4jakl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_quchf"]
+size = Vector3(0.312259, 1.95596, 0.320933)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ayipb"]
+height = 2.01156
+radius = 0.0455539
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ineb1"]
+size = Vector3(0.401732, 0.114139, 0.412049)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pjtdm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j63ff"]
+albedo_color = Color(0.466667, 1, 1, 1)
+
+[node name="truss" instance=ExtResource("1_p8lur")]
+script = ExtResource("2_4jakl")
+
+[node name="global" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/global" index="0"]
+shape = SubResource("BoxShape3D_quchf")
+
+[node name="tube1" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138092, 0, 0.13892)
+shape = SubResource("CylinderShape3D_ayipb")
+
+[node name="tube2" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138025, 0, 0.13892)
+shape = SubResource("CylinderShape3D_ayipb")
+
+[node name="tube3" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139501, 0, -0.146055)
+shape = SubResource("CylinderShape3D_ayipb")
+
+[node name="tube4" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.276116)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube4" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138092, 0, 0.13892)
+shape = SubResource("CylinderShape3D_ayipb")
+
+[node name="haut" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/haut" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.986625, 0)
+shape = SubResource("BoxShape3D_ineb1")
+
+[node name="bas" type="StaticBody3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial" index="6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/bas" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.988505, 0)
+shape = SubResource("BoxShape3D_ineb1")
+
+[node name="tube1" type="MeshInstance3D" parent="." index="1"]
+unique_name_in_owner = true
+transform = Transform3D(0.08, 0, 0, 0, 0.991742, 0, 0, 0, 0.08, -0.13047, 0, 0.139348)
+mesh = SubResource("CylinderMesh_pjtdm")
+surface_material_override/0 = SubResource("StandardMaterial3D_j63ff")
+
+[node name="tube2" type="MeshInstance3D" parent="." index="2"]
+unique_name_in_owner = true
+transform = Transform3D(0.08, 0, 0, 0, 0.991742, 0, 0, 0, 0.08, 0.139061, 0, 0.139348)
+mesh = SubResource("CylinderMesh_pjtdm")
+surface_material_override/0 = SubResource("StandardMaterial3D_j63ff")
+
+[node name="tube3" type="MeshInstance3D" parent="." index="3"]
+unique_name_in_owner = true
+transform = Transform3D(0.08, 0, 0, 0, 0.991742, 0, 0, 0, 0.08, 0.136254, 0, -0.130916)
+mesh = SubResource("CylinderMesh_pjtdm")
+surface_material_override/0 = SubResource("StandardMaterial3D_j63ff")
+
+[node name="tube4" type="MeshInstance3D" parent="." index="4"]
+unique_name_in_owner = true
+transform = Transform3D(0.08, 0, 0, 0, 0.991742, 0, 0, 0, 0.08, -0.13047, 0, -0.136464)
+mesh = SubResource("CylinderMesh_pjtdm")
+surface_material_override/0 = SubResource("StandardMaterial3D_j63ff")
+
+[connection signal="input_event" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/global" to="." method="global_input_event"]
+[connection signal="mouse_entered" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube1" to="." method="_on_tube_1_mouse_entered"]
+[connection signal="mouse_exited" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube1" to="." method="_on_tube_1_mouse_exited"]
+[connection signal="mouse_entered" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube2" to="." method="_on_tube_2_mouse_entered"]
+[connection signal="mouse_exited" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube2" to="." method="_on_tube_2_mouse_exited"]
+[connection signal="mouse_entered" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube3" to="." method="_on_tube_3_mouse_entered"]
+[connection signal="mouse_exited" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube3" to="." method="_on_tube_3_mouse_exited"]
+[connection signal="mouse_entered" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube4" to="." method="_on_tube_4_mouse_entered"]
+[connection signal="mouse_exited" from="Sketchfab_model/Collada visual scene group/Truss/defaultMaterial/tube4" to="." method="_on_tube_4_mouse_exited"]
