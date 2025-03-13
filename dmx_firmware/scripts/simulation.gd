@@ -8,3 +8,8 @@ func _input(event):
 		new_menu = load("res://menu/create_menu.tscn")
 		new_menu_instance = new_menu.instantiate()
 		add_child(new_menu_instance)
+
+func _ready():
+	# Charger le menu au démarrage de l'interface
+	new_menu = load("res://menu/main_menu.tscn")
+	add_child(new_menu.instantiate())
