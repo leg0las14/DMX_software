@@ -1,8 +1,3 @@
-# TODO : faire pour bouton 3 et 4
-# supprimer tout les commentaires inutile après
-
-#j'ai rajouté les boutons 3 et 4 mais je comprend pas pourquoi ça marche pas
-
 extends Control
 
 var button1
