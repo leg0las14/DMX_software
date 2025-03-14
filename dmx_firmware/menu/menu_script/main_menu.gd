@@ -1,10 +1,14 @@
 # TODO : faire pour bouton 3 et 4
 # supprimer tout les commentaires inutile après
 
+#j'ai rajouté les boutons 3 et 4 mais je comprend pas pourquoi ça marche pas
+
 extends Control
 
 var button1
 var button2
+var button3
+var button4
 
 func _ready() -> void:
 	# récupère le bouton
@@ -13,10 +17,14 @@ func _ready() -> void:
 	#############
 	button1 = $HBoxContainer/Button
 	button2 = $HBoxContainer/Button2
+	button3 = $HBoxContainer/Button3
+	button4 = $HBoxContainer/Button4
 	# Modifie ça couleur de départ (R, G, B, Alpha)
 
 	button1.modulate = Color(1, 0, 0, 1)
 	button2.modulate = Color(1, 1, 1, 1)
+	button3.modulate = Color(1, 1, 1, 1)
+	button4.modulate = Color(1, 1, 1, 1)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -27,7 +35,23 @@ func _process(delta: float) -> void:
 func _on_button_pressed():
 	button1.modulate = Color(1, 0, 0, 1)
 	button2.modulate = Color(1, 1, 1, 1)
+	button3.modulate = Color(1, 1, 1, 1)
+	button4.modulate = Color(1, 1, 1, 1)
 
 func _on_button_2_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
 	button2.modulate = Color(1, 0, 0, 1)
+	button3.modulate = Color(1, 1, 1, 1)
+	button4.modulate = Color(1, 1, 1, 1)
+
+func _on_button_3_pressed():
+	button1.modulate = Color(1, 1, 1, 1)
+	button2.modulate = Color(1, 1, 1, 1)
+	button3.modulate = Color(1, 0, 0, 1)
+	button4.modulate = Color(1, 1, 1, 1)
+
+func _on_button_4_pressed():
+	button1.modulate = Color(1, 1, 1, 1)
+	button2.modulate = Color(1, 1, 1, 1)
+	button3.modulate = Color(1, 1, 1, 1)
+	button4.modulate = Color(1, 0, 0, 1)
