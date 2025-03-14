@@ -86,7 +86,6 @@ func raycast_from_camera() -> Dictionary:
 	return space_state.intersect_ray(params)
 
 func x_view() -> void:
-	var move:Vector3 = global_transform.origin
 	$Elevation/MainCamera.set_orthogonal(10,200,2)
 	look_at_from_position(Vector3(0,0,0.3),Vector3(0,0,0))
 	print(global_position)

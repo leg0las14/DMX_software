@@ -1,0 +1,119 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs6w88opxlj76"]
+
+[ext_resource type="Script" path="res://menu/menu_script/add_element_menu.gd" id="1_q72hl"]
+
+[node name="add_element_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996599, 1.00186)
+script = ExtResource("1_q72hl")
+
+[node name="window" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = 62.0
+offset_right = 7.0
+offset_bottom = -63.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="list_items" type="ItemList" parent="window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 52.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9653, 0.913868)
+
+[node name="MarginContainer" type="MarginContainer" parent="window"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.0
+offset_right = 174.0
+offset_bottom = 38.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="spot_button" type="Button" parent="window/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Spots"
+
+[node name="structure_button" type="Button" parent="window/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Structures"
+
+[node name="decoration_button" type="Button" parent="window/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Décorations"
+
+[node name="valid_button" type="Button" parent="window"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Valider"
+
+[node name="retract_button_open" type="Button" parent="window"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -6.30066
+offset_top = -35.5365
+offset_right = 11.6993
+offset_bottom = 38.4635
+grow_vertical = 2
+text = ">"
+
+[node name="retract_button_close" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = -37.0
+offset_bottom = 37.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "<"
+
+[connection signal="pressed" from="window/MarginContainer/HBoxContainer/spot_button" to="." method="_on_spot_button_pressed"]
+[connection signal="pressed" from="window/MarginContainer/HBoxContainer/structure_button" to="." method="_on_structure_button_pressed"]
+[connection signal="pressed" from="window/MarginContainer/HBoxContainer/decoration_button" to="." method="_on_decoration_button_pressed"]
+[connection signal="pressed" from="window/valid_button" to="." method="_on_valid_button_pressed"]
+[connection signal="pressed" from="window/retract_button_open" to="." method="_on_retract_button_open_pressed"]
+[connection signal="pressed" from="retract_button_close" to="." method="_on_retract_button_close_pressed"]

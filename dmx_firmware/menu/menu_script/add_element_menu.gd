@@ -4,22 +4,31 @@ var spot_button
 var structure_button
 var decoration_button
 var list_items
-
+var retract_button_open
+var retract_button_close
+var window
 var items
 
 enum MenuStatus {spot, structure, decoration}
 var menu_status
 
+var retract = false
+
 func _ready():
 	Venv.isMenu = true
-	spot_button = $ColorRect/MarginContainer/HBoxContainer/spot_button
-	structure_button = $ColorRect/MarginContainer/HBoxContainer/structure_button
-	decoration_button = $ColorRect/MarginContainer/HBoxContainer/decoration_button
-	list_items = $ColorRect/list_items
-	
+	spot_button = $"%spot_button"
+	structure_button = $"%structure_button"
+	decoration_button = $"%decoration_button"
+	list_items = $window/list_items
+	retract_button_open = $"%retract_button_open"
+	retract_button_close = $"%retract_button_close"
+	window = $"%window"
+
 	spot_button.modulate = Color(1, 0, 0, 1)
-	structure_button.modulate = Color(0, 1, 0, 1)
-	decoration_button.modulate = Color(0, 1, 0, 1)
+	structure_button.modulate = Color(1, 1, 1, 1)
+	decoration_button.modulate = Color(1, 1, 1, 1)
+	
+	retract_button_close.visible = false
 	
 	list_items.clear()
 	items = Create.spot_list
@@ -36,8 +45,8 @@ func _input(event):
 		
 func _on_spot_button_pressed():
 	spot_button.modulate = Color(1, 0, 0, 1)
-	structure_button.modulate = Color(0, 1, 0, 1)
-	decoration_button.modulate = Color(0, 1, 0, 1)
+	structure_button.modulate = Color(1, 1, 1, 1)
+	decoration_button.modulate = Color(1, 1, 1, 1)
 	
 	items = Create.spot_list
 	list_items.clear()
@@ -46,9 +55,9 @@ func _on_spot_button_pressed():
 	menu_status = MenuStatus.spot
 	
 func _on_structure_button_pressed():
-	spot_button.modulate = Color(0, 1, 0, 1)
+	spot_button.modulate = Color(1, 1, 1, 1)
 	structure_button.modulate = Color(1, 0, 0, 1)
-	decoration_button.modulate = Color(0, 1, 0, 1)
+	decoration_button.modulate = Color(1, 1, 1, 1)
 	
 	items = Create.structure_list
 	list_items.clear()
@@ -57,8 +66,8 @@ func _on_structure_button_pressed():
 	menu_status = MenuStatus.structure
 
 func _on_decoration_button_pressed():
-	spot_button.modulate = Color(0, 1, 0, 1)
-	structure_button.modulate = Color(0, 1, 0, 1)
+	spot_button.modulate = Color(1, 1, 1, 1)
+	structure_button.modulate = Color(1, 1, 1, 1)
 	decoration_button.modulate = Color(1, 0, 0, 1)
 	
 	items = Create.decoration_list
@@ -92,4 +101,13 @@ func valider():
 				Venv.spot = Create.decoration_list[item_title]
 				Create.CreateNew(Vector3(0,0,0), Create.decoration_list[item_title])
 		Venv.isMenu=false
-		queue_free()
+
+
+
+
+func _on_retract_button_open_pressed() -> void:
+	window.visible = false
+	retract_button_close.visible = true
+func _on_retract_button_close_pressed() -> void:
+	window.visible = true
+	retract_button_close.visible = false

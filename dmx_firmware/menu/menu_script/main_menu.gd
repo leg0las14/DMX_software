@@ -20,11 +20,6 @@ func _ready() -> void:
 	button2.modulate = Color(1, 1, 1, 1)
 	button3.modulate = Color(1, 1, 1, 1)
 	button4.modulate = Color(1, 1, 1, 1)
-	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 
 func _on_button_pressed():

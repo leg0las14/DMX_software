@@ -37,9 +37,3 @@ script = ExtResource("2_w3j86")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.999312, -0.0370798, 0, 0.0370798, 0.999312, 0, 0, 10)
 keep_aspect = 0
-
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0

@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://xrrnifldxknh"]
+
+[ext_resource type="Script" path="res://menu/menu_script/setting_menu.gd" id="1_e0c2i"]
+
+[node name="create_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.996599, 1.00186)
+script = ExtResource("1_e0c2i")
+
+[node name="window" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -221.0
+offset_right = 349.0
+offset_bottom = 212.0
+grow_vertical = 2
+color = Color(0.392157, 0.392157, 0.392157, 1)
+
+[node name="ItemList" type="ItemList" parent="window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 66.0
+offset_right = -9.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 2.0
+offset_bottom = 51.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="param_button" type="Button" parent="window/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "paramètres de la scène"
+
+[node name="arbo_button" type="Button" parent="window/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Arborescence"
+
+[node name="retract_button_open" type="Button" parent="window"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -35.5
+offset_right = 9.0
+offset_bottom = 38.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "<"
+
+[node name="retract_button_close" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -37.0
+offset_right = 18.0
+offset_bottom = 37.0
+grow_vertical = 2
+text = ">"
+
+[connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]
+[connection signal="pressed" from="window/HBoxContainer/arbo_button" to="." method="_on_arbo_button_pressed"]
+[connection signal="pressed" from="window/retract_button_open" to="." method="_on_retract_button_open_pressed"]
+[connection signal="pressed" from="retract_button_close" to="." method="_on_retract_button_close_pressed"]

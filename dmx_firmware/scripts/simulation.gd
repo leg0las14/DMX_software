@@ -1,15 +1,15 @@
 extends Node3D
 
-var new_menu
-var new_menu_instance
 func _input(event):
-	if event.is_action_pressed("new_spot") and !Venv.isMenu:
-		#Create.CreateSpot(Vector3(0,0,0), Create.truss_square_2m)
-		new_menu = load("res://menu/create_menu.tscn")
-		new_menu_instance = new_menu.instantiate()
-		add_child(new_menu_instance)
+	pass
 
 func _ready():
-	# Charger le menu au démarrage de l'interface
-	new_menu = load("res://menu/main_menu.tscn")
-	add_child(new_menu.instantiate())
+	var canvas_layer = CanvasLayer.new()
+	add_child(canvas_layer)
+
+	add_menu("res://menu/main_menu.tscn",canvas_layer)
+	add_menu("res://menu/add_element_menu.tscn",canvas_layer)
+	add_menu("res://menu/setting_menu.tscn", canvas_layer)
+
+func add_menu(menu_path: String, canvas_layer: CanvasLayer):
+	canvas_layer.add_child(load(menu_path).instantiate())
