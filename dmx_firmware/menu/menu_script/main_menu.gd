@@ -27,19 +27,16 @@ func _on_button_pressed():
 	button2.modulate = Color(1, 1, 1, 1)
 	button3.modulate = Color(1, 1, 1, 1)
 	button4.modulate = Color(1, 1, 1, 1)
-
 func _on_button_2_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
 	button2.modulate = Color(1, 0, 0, 1)
 	button3.modulate = Color(1, 1, 1, 1)
 	button4.modulate = Color(1, 1, 1, 1)
-
 func _on_button_3_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
 	button2.modulate = Color(1, 1, 1, 1)
 	button3.modulate = Color(1, 0, 0, 1)
 	button4.modulate = Color(1, 1, 1, 1)
-
 func _on_button_4_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
 	button2.modulate = Color(1, 1, 1, 1)

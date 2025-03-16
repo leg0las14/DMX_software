@@ -27,9 +27,9 @@ func _ready():
 	spot_button.modulate = Color(1, 0, 0, 1)
 	structure_button.modulate = Color(1, 1, 1, 1)
 	decoration_button.modulate = Color(1, 1, 1, 1)
-	
+
 	retract_button_close.visible = false
-	
+
 	list_items.clear()
 	items = Create.spot_list
 	for i in items:

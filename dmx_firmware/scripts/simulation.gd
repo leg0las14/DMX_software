@@ -1,8 +1,5 @@
 extends Node3D
 
-func _input(event):
-	pass
-
 func _ready():
 	var canvas_layer = CanvasLayer.new()
 	add_child(canvas_layer)
