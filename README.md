@@ -1,2 +1,3 @@
 # DMX_software
-test ssh
+projet en cours de developpement...
+Basé sur moteur Godot 4.3
