@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dp2e0r5pb2tie"]
+[gd_scene load_steps=2 format=3 uid="uid://dp2e0r5pb2tie"]
+
+[ext_resource type="Script" path="res://menu/menu_script/macro_menu.gd" id="1_s5glb"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,22 +9,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_s5glb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ouvrir" type="Button" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -236.0
-offset_top = -321.0
-offset_bottom = 321.0
+offset_left = -18.0
+offset_top = -47.0
+offset_bottom = 17.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "<"
+
+[node name="window" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.878
+offset_left = -238.0
+offset_top = 57.0
+offset_bottom = 0.0559692
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.392157, 0.392157, 0.392157, 1)
 
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="fermer" type="Button" parent="window"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -32,41 +51,83 @@ offset_top = -34.0
 offset_right = 9.0
 offset_bottom = 40.0
 grow_vertical = 2
-text = "<"
+text = ">"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
-layout_mode = 0
-offset_left = 12.0
-offset_top = 11.0
-offset_right = 224.0
-offset_bottom = 625.0
+[node name="ScrollContainer" type="ScrollContainer" parent="window"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = -14.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="BoxContainer" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="window/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer" type="VBoxContainer" parent="window/ScrollContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="ColorRect/ScrollContainer/BoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Button" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button2" type="Button" parent="ColorRect/ScrollContainer/BoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Button2" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button3" type="Button" parent="ColorRect/ScrollContainer/BoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Button3" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button4" type="Button" parent="ColorRect/ScrollContainer/BoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Button4" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Button5" type="Button" parent="ColorRect/ScrollContainer/BoxContainer"]
-custom_minimum_size = Vector2(0, 200)
+[node name="Button5" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer"]
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="BoxContainer2" type="VBoxContainer" parent="window/ScrollContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button3" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button4" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button5" type="Button" parent="window/ScrollContainer/HBoxContainer/BoxContainer2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="ouvrir" to="." method="_on_ouvrir_pressed"]
+[connection signal="pressed" from="window/fermer" to="." method="_on_fermer_pressed"]
