@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlb5kfvm5h5a8"]
+
+[ext_resource type="PackedScene" uid="uid://bq8aglcnlte1r" path="res://menu/list_spot_menu.tscn" id="1_sehv8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.054
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.175995
+offset_top = 0.00799942
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.436689, 0.640301, 0.817937, 1)
+
+[node name="list_spot_menu" parent="." instance=ExtResource("1_sehv8")]
+layout_mode = 1
+anchor_top = 0.54
+anchor_right = 0.364
+offset_top = -1.92001
+offset_right = -1.32803
+offset_bottom = 2.0
