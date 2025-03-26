@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Create="*res://scripts/create.gd"
 Venv="*res://scripts/venv.gd"
+JsonSingletonMutex="*res://scripts/json_singleton_mutex.gd"
 
 [dotnet]
 
