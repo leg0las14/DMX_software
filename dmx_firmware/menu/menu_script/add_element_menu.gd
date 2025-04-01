@@ -31,7 +31,7 @@ func _ready():
 	retract_button_close.visible = false
 
 	list_items.clear()
-	items = Create.spot_list
+	items = ModelManager.spot_list
 	for i in items:
 		list_items.add_item(i)
 	menu_status = MenuStatus.spot
@@ -48,7 +48,7 @@ func _on_spot_button_pressed():
 	structure_button.modulate = Color(1, 1, 1, 1)
 	decoration_button.modulate = Color(1, 1, 1, 1)
 	
-	items = Create.spot_list
+	items = ModelManager.spot_list
 	list_items.clear()
 	for i in items:
 		list_items.add_item(i)
@@ -59,7 +59,7 @@ func _on_structure_button_pressed():
 	structure_button.modulate = Color(1, 0, 0, 1)
 	decoration_button.modulate = Color(1, 1, 1, 1)
 	
-	items = Create.structure_list
+	items = ModelManager.structure_list
 	list_items.clear()
 	for i in items:
 		list_items.add_item(i)
@@ -70,7 +70,7 @@ func _on_decoration_button_pressed():
 	structure_button.modulate = Color(1, 1, 1, 1)
 	decoration_button.modulate = Color(1, 0, 0, 1)
 	
-	items = Create.decoration_list
+	items = ModelManager.decoration_list
 	list_items.clear()
 	for i in items:
 		list_items.add_item(i)
@@ -91,15 +91,15 @@ func valider():
 		match menu_status:
 			MenuStatus.spot:
 				Venv.isCreatingSpot = true
-				Venv.spot = Create.spot_list[item_title]
-				Create.CreateNew(Vector3(0,0,0), Create.spot_list[item_title])
+				Venv.spot = ModelManager.spot_list[item_title]
+				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.spot_list[item_title])
 			MenuStatus.structure:
 				Venv.isCreatingStructure = true
-				Venv.spot = Create.structure_list[item_title]
-				Create.CreateNew(Vector3(0,0,0), Create.structure_list[item_title])
+				Venv.spot = ModelManager.structure_list[item_title]
+				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.structure_list[item_title])
 			MenuStatus.decoration:
-				Venv.spot = Create.decoration_list[item_title]
-				Create.CreateNew(Vector3(0,0,0), Create.decoration_list[item_title])
+				Venv.spot = ModelManager.decoration_list[item_title]
+				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.decoration_list[item_title])
 		Venv.isMenu=false
 
 

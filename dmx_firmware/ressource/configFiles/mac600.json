@@ -1,6 +1,7 @@
 {
   "spot": {
-	"name": "MonSpot",
+	"name": "Mac600",
+	"prefab": "res://prefab/lyre.tscn",
 	"colors": [
 	  {
 		"nom": "Rouge",

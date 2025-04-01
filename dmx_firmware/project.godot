@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Create="*res://scripts/create.gd"
+ModelManager="*res://scripts/3dModelManager.gd"
 Venv="*res://scripts/venv.gd"
 JsonSingletonMutex="*res://scripts/json_singleton_mutex.gd"
 
