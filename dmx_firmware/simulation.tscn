@@ -30,6 +30,7 @@ environment = SubResource("Environment_oobpt")
 
 [node name="CameraPivot" type="Node3D" parent="."]
 script = ExtResource("2_w3j86")
+camera_zoom_steps = 4
 
 [node name="Elevation" type="Node3D" parent="CameraPivot"]
 
