@@ -1,0 +1,29 @@
+{
+  "spot": {
+	"name": "MonSpot",
+	"colors": [
+	  {
+		"nom": "Rouge",
+		"codeHex": "#FF0000"
+	  },
+	  {
+		"nom": "Vert",
+		"codeHex": "#00FF00"
+	  },
+	  {
+		"nom": "Bleu",
+		"codeHex": "#0000FF"
+	  },
+	  {
+		"nom": "Jaune",
+		"codeHex": "#FFFF00"
+	  },
+	  {
+		"nom": "Violet",
+		"codeHex": "#800080"
+	  }
+	],
+	"pan": "180",
+	"tilt": "360"
+  }
+}

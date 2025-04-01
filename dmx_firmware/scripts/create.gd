@@ -1,5 +1,8 @@
 extends Node
 
+
+func _ready() -> void:
+	print(JsonSingletonMutex.getConfigFileList("res://ressource/configFiles/"))
 #liste des spots :
 
 var spot_list ={

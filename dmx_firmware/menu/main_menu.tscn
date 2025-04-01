@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://menu/menu_script/main_menu.gd" id="1_o6jwn"]
 [ext_resource type="PackedScene" uid="uid://cj07lfi8yvxj2" path="res://simulation.tscn" id="2_6mce7"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4qkod"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_40rgq"]
 viewport_path = NodePath("SubViewport")
 
 [node name="Control" type="Control"]
@@ -63,9 +63,8 @@ size_2d_override = Vector2i(520, 512)
 [node name="simulation" parent="SubViewport" instance=ExtResource("2_6mce7")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(572, 338)
-scale = Vector2(1.6582, 1)
-texture = SubResource("ViewportTexture_4qkod")
+position = Vector2(583, 335)
+texture = SubResource("ViewportTexture_40rgq")
 
 [connection signal="mouse_entered" from="HBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
