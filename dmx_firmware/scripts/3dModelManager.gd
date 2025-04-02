@@ -27,8 +27,6 @@ func CreateNew (pos, path):
 	get_tree().get_root().add_child(objectInstance)
 	objects.append(objectInstance)
 	print(objects)
-	objects[0].name = "cc"
-	print(objects[0].name)
 
 func attachToObjetc(spot: Node3D, object: Node3D):
 	if spot.get_parent() != object:

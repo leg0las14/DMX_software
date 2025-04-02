@@ -1,4 +1,4 @@
-extends Sprite
+extends Entity
 class_name Spot
 
 var adresse:int
@@ -6,9 +6,8 @@ enum ecouleur {}
 var couleur:ecouleur
 var mode:String
 
-
 func _ready() -> void:
-	pass
+	super()
 
 func _process(delta: float) -> void:
 	pass

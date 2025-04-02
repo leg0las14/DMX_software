@@ -10,7 +10,6 @@ const RAY_DISTANCE: float = 100
 @export var camera_zoom_speed: float = 10
 
 @export var camera_zoom_steps: int = 5
-
 @export var camera_zoom_min: float = 0.05
 @export var camera_zoom_max: float = 10
 

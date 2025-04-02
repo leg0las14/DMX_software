@@ -1,10 +1,9 @@
 extends Node3D
-class_name Sprite
+class_name Entity
 
 
 func _ready() -> void:
-	print("new 3d model create")
-
+	pass
 func getPos()-> Vector3:
 	return position
 
