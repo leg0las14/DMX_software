@@ -4,9 +4,8 @@ class_name RtsCameraController
 
 const RAY_DISTANCE: float = 100
 
-@export var camera_move_speed: float = 3
+@export var base_move_speed: float = 3  # Vitesse de base au zoom min
 @export var camera_rotate_speed: float = 0.5
-
 @export var camera_zoom_speed: float = 10
 
 @export var camera_zoom_steps: int = 5
@@ -27,27 +26,26 @@ func _process(delta: float) -> void:
 	_zoom(delta)
 
 func _move(delta: float) -> void:
-	
 	if mouse_pressed and shift:
 		var mouse_delta = last_mouse_pos_move - get_viewport().get_mouse_position()
 		var v = Vector3(mouse_delta.x, -mouse_delta.y, 0)
-		if v.x !=0 or v.y !=0:
-			translate_object_local(v.normalized()* delta * camera_move_speed)
+
+		if v.x != 0 or v.y != 0:
+			# Calcul de la vitesse en fonction du zoom
+			var zoom_factor = inverse_lerp(camera_zoom_min, camera_zoom_max, camera.position.z)
+			var move_speed = lerp(base_move_speed * 0.5, base_move_speed * 2, zoom_factor)  # Vitesse plus lente zoomé, plus rapide dézoomé
+			translate_object_local(v.normalized() * delta * move_speed)
+	
 	last_mouse_pos_move = get_viewport().get_mouse_position()
 
 func _rotate(delta: float) -> void:
 	if mouse_pressed and !shift:
-
 		var mouse_delta = last_mouse_pos_rotate - get_viewport().get_mouse_position()
-		#rotate_y(mouse_delta.x * delta * camera_rotate_speed) # Rotation autour de l'axe Y (horizontal)
-		#rotate_x(mouse_delta.y * delta * camera_rotate_speed) # Rotation autour de l'axe X (vertical)
 		var v = Vector3(mouse_delta.y, mouse_delta.x, 0)
-		if v.x !=0 or v.y !=0:
+		if v.x != 0 or v.y != 0:
 			rotate_object_local(v.normalized(), v.length() * delta * camera_rotate_speed)
 		rotation.z = 0
 	last_mouse_pos_rotate = get_viewport().get_mouse_position()
-
-
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -71,7 +69,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _zoom(delta: float) -> void:
 	var zoom_dist = lerpf(camera_zoom_min, camera_zoom_max, camera_zoom_target / camera_zoom_steps)
-	camera.position.z = lerpf(camera.position.z, zoom_dist, delta * camera_zoom_speed)
+	var zoom_speed = camera_zoom_speed / (log(camera.position.z + 2))  # Plus proche = zoom plus lent
+	camera.position.z = lerpf(camera.position.z, zoom_dist, delta * zoom_speed)
 
 func raycast_from_camera() -> Dictionary:
 	var space_state = get_world_3d().direct_space_state
