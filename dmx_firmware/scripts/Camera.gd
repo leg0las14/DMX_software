@@ -13,7 +13,8 @@ const RAY_DISTANCE: float = 100
 @export var camera_zoom_max: float = 10
 
 @onready var camera = %MainCamera
-@onready var camera_zoom_target: float = inverse_lerp(camera_zoom_min, camera_zoom_max, camera.position.z) * camera_zoom_steps
+@onready var camera_zoom_target: float = 0
+#@onready var camera_zoom_target: float = inverse_lerp(camera_zoom_min, camera_zoom_max, camera.position.z) * camera_zoom_steps
 
 var shift = false
 var mouse_pressed = false
@@ -68,9 +69,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	camera_zoom_target = clamp(camera_zoom_target, 0, camera_zoom_steps)
 
 func _zoom(delta: float) -> void:
-	var zoom_dist = lerpf(camera_zoom_min, camera_zoom_max, camera_zoom_target / camera_zoom_steps)
-	var zoom_speed = camera_zoom_speed / (log(camera.position.z + 2))  # Plus proche = zoom plus lent
-	camera.position.z = lerpf(camera.position.z, zoom_dist, delta * zoom_speed)
+	var zoom_factor = camera_zoom_target / camera_zoom_steps
+	zoom_factor = zoom_factor * zoom_factor * zoom_factor
+	camera.position.z = lerp(camera.position.z, zoom_factor * camera_zoom_steps, 0.1)
 
 func raycast_from_camera() -> Dictionary:
 	var space_state = get_world_3d().direct_space_state
