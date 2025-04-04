@@ -25,6 +25,7 @@ color = Color(0.408098, 0.616193, 0.79428, 1)
 
 [node name="list_spot_menu" parent="." instance=ExtResource("1_fd35y")]
 layout_mode = 1
+anchors_preset = -1
 anchor_top = 0.534
 offset_top = -0.0320129
 offset_bottom = 2.0
