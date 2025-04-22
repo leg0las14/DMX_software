@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtxgq3mjgppvy"]
+[gd_scene load_steps=3 format=3 uid="uid://dtxgq3mjgppvy"]
 
 [ext_resource type="Script" path="res://menu/menu_script/main_menu.gd" id="1_o6jwn"]
+[ext_resource type="Texture2D" uid="uid://bu3df2jddipu" path="res://ressource/drawable/home.png" id="2_mm8c0"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -24,7 +25,7 @@ color = Color(0.133196, 0.133196, 0.133196, 1)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 31.0
+offset_bottom = 33.0
 grow_horizontal = 2
 alignment = 1
 
@@ -51,6 +52,10 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Enregistrement"
+
+[node name="Button5" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_mm8c0")
 
 [connection signal="mouse_entered" from="HBoxContainer/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

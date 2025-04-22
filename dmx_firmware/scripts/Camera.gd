@@ -100,9 +100,12 @@ func _zoom(delta: float) -> void:
 
 func _position() -> void:
 	if Input.is_action_pressed("camera_reset"):
-		global_position = start_position
-		rotation_degrees = start_rotation
-		camera_zoom_target = 0
+		reset_camera()
+
+func reset_camera()->void:
+	global_position = start_position
+	rotation_degrees = start_rotation
+	camera_zoom_target = 0
 
 func raycast_from_camera() -> Dictionary:
 	var space_state = get_world_3d().direct_space_state
