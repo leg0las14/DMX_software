@@ -17,17 +17,25 @@ const RAY_DISTANCE: float = 100
 
 @onready var camera = %MainCamera
 @onready var camera_zoom_target: float = 0
-#@onready var camera_zoom_target: float = inverse_lerp(camera_zoom_min, camera_zoom_max, camera.position.z) * camera_zoom_steps
 
 var shift = false
 var mouse_pressed = false
 var last_mouse_pos_rotate: Vector2
 var last_mouse_pos_move: Vector2
 
+var start_position
+var start_rotation
+
+func _ready() -> void:
+	start_position = global_position
+	start_rotation = rotation_degrees
+	
+
 func _process(delta: float) -> void:
 	_move(delta)
 	_rotate(delta)
 	_zoom(delta)
+	_position()
 
 func _move(delta: float) -> void:
 	if mouse_pressed and shift:
@@ -39,7 +47,7 @@ func _move(delta: float) -> void:
 			var zoom_factor = inverse_lerp(camera_zoom_min, camera_zoom_max, camera.position.z)
 			var move_speed = lerp(base_move_speed * 0.5, base_move_speed * 2, zoom_factor)  # Vitesse plus lente zoomé, plus rapide dézoomé
 			translate_object_local(v.normalized() * delta * move_speed)
-	
+
 	last_mouse_pos_move = get_viewport().get_mouse_position()
 	
 	#if Input.is_action_pressed("camera_move_forward"):  # Vérifie si "Z" est pressé
@@ -89,6 +97,12 @@ func _zoom(delta: float) -> void:
 	var zoom_factor = camera_zoom_target / camera_zoom_steps
 	zoom_factor = zoom_factor * zoom_factor * zoom_factor
 	camera.position.z = lerp(camera.position.z, zoom_factor * camera_zoom_steps, 0.1)
+
+func _position() -> void:
+	if Input.is_action_pressed("camera_reset"):
+		global_position = start_position
+		rotation_degrees = start_rotation
+		camera_zoom_target = 0
 
 func raycast_from_camera() -> Dictionary:
 	var space_state = get_world_3d().direct_space_state

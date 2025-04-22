@@ -32,9 +32,7 @@ environment = SubResource("Environment_oobpt")
 script = ExtResource("2_w3j86")
 camera_zoom_steps = 9
 
-[node name="Elevation" type="Node3D" parent="CameraPivot"]
-
-[node name="MainCamera" type="Camera3D" parent="CameraPivot/Elevation"]
+[node name="MainCamera" type="Camera3D" parent="CameraPivot"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.999312, -0.0370798, 0, 0.0370798, 0.999312, 0, 0, 10)
 keep_aspect = 0
