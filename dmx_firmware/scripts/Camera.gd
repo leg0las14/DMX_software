@@ -49,10 +49,10 @@ func _move(delta: float) -> void:
 		#var forward = transform.basis.z  # Obtient la direction avant de la caméra
 		#position += forward * speedz * delta
 	if Input.is_action_pressed("camera_move_right"):  # Vérifie si "Z" est pressé
-		var forward = transform.basis.x  # Obtient la direction avant de la caméra
+		var forward = -transform.basis.x  # Obtient la direction avant de la caméra
 		position += forward * speedx * delta
 	if Input.is_action_pressed("camera_move_left"):  # Vérifie si "Z" est pressé
-		var forward = -transform.basis.x  # Obtient la direction avant de la caméra
+		var forward = +transform.basis.x  # Obtient la direction avant de la caméra
 		position += forward * speedx * delta
 
 func _rotate(delta: float) -> void:
