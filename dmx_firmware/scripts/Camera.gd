@@ -35,7 +35,6 @@ func _process(delta: float) -> void:
 	_move(delta)
 	_rotate(delta)
 	_zoom(delta)
-	_position()
 
 func _move(delta: float) -> void:
 	if mouse_pressed and shift:
@@ -45,22 +44,15 @@ func _move(delta: float) -> void:
 		if v.x != 0 or v.y != 0:
 			# Calcul de la vitesse en fonction du zoom
 			var zoom_factor = inverse_lerp(camera_zoom_min, camera_zoom_max, camera.position.z)
-			var move_speed = lerp(base_move_speed * 0.5, base_move_speed * 2, zoom_factor)  # Vitesse plus lente zoomé, plus rapide dézoomé
+			var move_speed = lerp(base_move_speed * 0.5, base_move_speed * 2, zoom_factor)
 			translate_object_local(v.normalized() * delta * move_speed)
 
 	last_mouse_pos_move = get_viewport().get_mouse_position()
-	
-	#if Input.is_action_pressed("camera_move_forward"):  # Vérifie si "Z" est pressé
-		#var forward = -transform.basis.z  # Obtient la direction avant de la caméra
-		#position += forward * speedz * delta  # Déplace dans la direction avantz
-	#if Input.is_action_pressed("camera_move_backward"):  # Vérifie si "Z" est pressé
-		#var forward = transform.basis.z  # Obtient la direction avant de la caméra
-		#position += forward * speedz * delta
-	if Input.is_action_pressed("camera_move_right"):  # Vérifie si "Z" est pressé
-		var forward = -transform.basis.x  # Obtient la direction avant de la caméra
+	if Input.is_action_pressed("camera_move_right"):
+		var forward = -transform.basis.x
 		position += forward * speedx * delta
-	if Input.is_action_pressed("camera_move_left"):  # Vérifie si "Z" est pressé
-		var forward = +transform.basis.x  # Obtient la direction avant de la caméra
+	if Input.is_action_pressed("camera_move_left"):
+		var forward = +transform.basis.x 
 		position += forward * speedx * delta
 
 func _rotate(delta: float) -> void:
@@ -97,10 +89,6 @@ func _zoom(delta: float) -> void:
 	var zoom_factor = camera_zoom_target / camera_zoom_steps
 	zoom_factor = zoom_factor * zoom_factor * zoom_factor
 	camera.position.z = lerp(camera.position.z, zoom_factor * camera_zoom_steps, 0.1)
-
-func _position() -> void:
-	if Input.is_action_pressed("camera_reset"):
-		reset_camera()
 
 func reset_camera()->void:
 	global_position = start_position

@@ -7,6 +7,8 @@ var button4
 
 var liste_menu:=[]
 
+@export var mainCamera:Node
+
 func _ready() -> void:
 	
 
@@ -58,6 +60,10 @@ func _on_button_4_pressed():
 	remove_alls_menu()
 	add_menu("res://menu/enregistrement_menu.tscn")
 
+
+func _on_button_5_pressed() -> void:
+	if mainCamera and mainCamera.has_method("reset_camera"):
+			mainCamera.reset_camera()
 
 func add_menu(menu_path: String):
 	var menu_instance = load(menu_path).instantiate()
