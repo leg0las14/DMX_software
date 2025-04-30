@@ -73,6 +73,47 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "<"
 
+[node name="ColorRect" type="ColorRect" parent="window"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.133
+anchor_right = 1.0
+offset_left = 10.0
+offset_top = 137.554
+offset_right = -9.0
+offset_bottom = 485.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="window/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 44.0
+offset_right = -24.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="window/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="CheckBox" type="CheckBox" parent="window/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="window/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="window/ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="retract_button_close" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -90,10 +131,10 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.339
-offset_left = 13.0444
-offset_top = 132.753
-offset_right = -12.4836
-offset_bottom = -92.2469
+offset_left = 753.563
+offset_top = 68.8719
+offset_right = 733.035
+offset_bottom = -160.128
 grow_horizontal = 1
 
 [connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]
