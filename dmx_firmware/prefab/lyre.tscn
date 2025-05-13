@@ -221,16 +221,21 @@ mesh = SubResource("ArrayMesh_vnr5n")
 skeleton = NodePath("")
 
 [node name="arche" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.000999171, 0, 0, 0, 0.000999171, 0, 0, 0, 0.000999171, 0, 0.0782615, 0)
+unique_name_in_owner = true
+transform = Transform3D(0.000984136, 0, 0.00017268, 0, 0.000999171, 0, -0.00017268, 0, 0.000984136, 0, 0.0782615, 0)
 mesh = SubResource("ArrayMesh_abgot")
 skeleton = NodePath("")
 
-[node name="tete" type="MeshInstance3D" parent="arche"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 83.2711, -67.7614)
+[node name="pivot tete" type="Node3D" parent="arche"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82448, 89.8659, -10.3981)
+
+[node name="tete" type="MeshInstance3D" parent="arche/pivot tete"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.82448, -6.5948, -57.3633)
 mesh = SubResource("ArrayMesh_11fxu")
 skeleton = NodePath("")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="arche/tete"]
+[node name="SpotLight3D" type="SpotLight3D" parent="arche/pivot tete/tete"]
 transform = Transform3D(1000, 0, 0, 0, -8.74228e-05, -1000, 0, 1000, -8.74228e-05, 0, 116.39, -1.1125)
 light_energy = 16.0
 spot_angle = 23.6218

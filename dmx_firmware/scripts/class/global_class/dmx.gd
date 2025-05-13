@@ -22,6 +22,3 @@ func setValue(val: int, pos:int)->void :
 			print("valeur doit etre comprise entre 255 et 0")
 	else:
 		print("valeur doit être comprise entre 511 et 0")
-
-func _process(delta: float) -> void:
-	print(getValue(0))
