@@ -8,6 +8,7 @@ var retract_button_open
 var retract_button_close
 var window
 var items
+var selected_item_data = null
 
 enum MenuStatus {spot, structure, decoration}
 var menu_status
@@ -93,6 +94,7 @@ func valider():
 				Venv.isCreatingSpot = true
 				Venv.spot = ModelManager.spot_list[item_title]
 				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.spot_list[item_title])
+				Venv.selected_item_data = ModelManager.spot_list[item_title]
 			MenuStatus.structure:
 				Venv.isCreatingStructure = true
 				Venv.spot = ModelManager.structure_list[item_title]
