@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 ModelManager="*res://scripts/3dModelManager.gd"
 Venv="*res://scripts/venv.gd"
 JsonSingletonMutex="*res://scripts/json_singleton_mutex.gd"
+dmx="*res://scripts/class/global_class/dmx.gd"
+SerialInterface="*res://scripts/class/global_class/SerialInterface.gd"
 
 [dotnet]
 
