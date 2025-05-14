@@ -6,6 +6,11 @@
 font_color = Color(0, 0, 0, 1)
 
 [node name="HBoxContainer" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.155
+anchor_bottom = 0.151
+offset_right = -0.559998
+offset_bottom = 0.151993
 size_flags_vertical = 3
 
 [node name="Label_nom_spot" type="Label" parent="."]

@@ -105,8 +105,6 @@ func valider():
 		Venv.isMenu=false
 
 
-
-
 func _on_retract_button_open_pressed() -> void:
 	window.visible = false
 	retract_button_close.visible = true

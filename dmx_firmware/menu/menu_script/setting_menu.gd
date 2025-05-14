@@ -7,7 +7,7 @@ var retract_button_open
 var retract_button_close
 var spot_list
 var parametre_list
-@onready var vbox_container: VBoxContainer = $window/ColorRect/V_BOX
+@onready var vbox_container: VBoxContainer = $window/ColorRect/ScrollContainer/V_BOX
 
 
 func _ready() -> void:
@@ -24,7 +24,6 @@ func _ready() -> void:
 	spot_list.visible = false
 	param_button.modulate = Color(1, 0, 0, 1)
 	arbo_button.modulate = Color(1, 1, 1, 1)
-
 
 func _on_param_button_pressed() -> void:
 	param_button.modulate = Color(1, 0, 0, 1)
@@ -60,5 +59,3 @@ func add_container(nom :String) -> void:
 	label_inside.text = nom
 	
 	vbox_container.add_child(instance)
-	
-	
