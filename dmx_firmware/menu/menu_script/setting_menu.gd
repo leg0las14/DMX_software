@@ -49,9 +49,12 @@ func _on_retract_button_close_pressed() -> void:
 func _input(event):
 	if event.is_action_pressed("ajout_container"):
 		var objet = Venv.selected_item_data
-		add_container(objet)
+		if objet:
+			add_container(objet)
+		else :
+			add_container()
 
-func add_container(nom :String) -> void:
+func add_container(nom :String = "pas de nom") -> void:
 	var arborescence_scene =load("res://menu/arborescence.tscn")
 	var instance = arborescence_scene.instantiate()
 	
