@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj07lfi8yvxj2"]
+[gd_scene load_steps=6 format=3 uid="uid://cj07lfi8yvxj2"]
 
-[ext_resource type="PackedScene" uid="uid://cqeshse8vqm2h" path="res://prefab/lyre.tscn" id="1_12afo"]
 [ext_resource type="Script" path="res://scripts/simulation.gd" id="1_jdde4"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_w3j86"]
 
@@ -21,9 +20,6 @@ volumetric_fog_density = 0.0
 
 [node name="simulation" type="Node3D"]
 script = ExtResource("1_jdde4")
-
-[node name="lyre" parent="." instance=ExtResource("1_12afo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11764, 0, -1.22937)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oobpt")

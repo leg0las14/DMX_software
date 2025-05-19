@@ -235,7 +235,8 @@ transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -1.82448, -6.5948, -57.3633)
 mesh = SubResource("ArrayMesh_11fxu")
 skeleton = NodePath("")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="arche/pivot tete/tete"]
+[node name="light" type="SpotLight3D" parent="arche/pivot tete/tete"]
+unique_name_in_owner = true
 transform = Transform3D(1000, 0, 0, 0, -8.74228e-05, -1000, 0, 1000, -8.74228e-05, 0, 116.39, -1.1125)
 light_energy = 16.0
 spot_angle = 23.6218

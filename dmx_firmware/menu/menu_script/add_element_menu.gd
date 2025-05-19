@@ -33,7 +33,7 @@ func _ready():
 	list_items.clear()
 	items = ModelManager.spot_list
 	for i in items:
-		list_items.add_item(i)
+		list_items.add_item(i.name)
 	menu_status = MenuStatus.spot
 
 func _input(event):
@@ -91,16 +91,19 @@ func valider():
 		match menu_status:
 			MenuStatus.spot:
 				Venv.isCreatingSpot = true
-				Venv.spot = ModelManager.spot_list[item_title]
-				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.spot_list[item_title])
+				for spot in ModelManager.spot_list:
+					if spot.name == item_title:
+						ModelManager.CreateNew(Vector3(0, 0, 0), spot.prefab, spot.src)
+						break
 			MenuStatus.structure:
 				Venv.isCreatingStructure = true
 				Venv.spot = ModelManager.structure_list[item_title]
-				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.structure_list[item_title])
+				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.structure_list[item_title])
 			MenuStatus.decoration:
 				Venv.spot = ModelManager.decoration_list[item_title]
-				ModelManager.CreateNew(Vector3(0,0,0), ModelManager.decoration_list[item_title])
-		Venv.isMenu=false
+				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.decoration_list[item_title])
+		Venv.isMenu = false
+
 
 
 

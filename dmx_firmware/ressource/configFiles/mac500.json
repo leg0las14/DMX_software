@@ -1,11 +1,11 @@
 {
   "spot": {
-	"name": "Mac600",
+	"name": "Mac500",
 	"prefab": "res://prefab/lyre.tscn",
 	"movement":{
 		"pan_max": 0,
-		"pan_min": 270,
-		"tilt_max":-185,
+		"pan_min": 100,
+		"tilt_max":-20,
 		"tilt_min":0
 	  },
 	"colors": [
