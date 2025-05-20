@@ -4,7 +4,7 @@ var serial_port := SerialPort.new()
 var buffer_trame := ""
 
 func _ready() -> void:
-	serial_port.port = "/dev/ttyUSB1"
+	serial_port.port = "/dev/ttyUSB0"
 	serial_port.baudrate = 115200
 	serial_port.bytesize = 8
 	serial_port.stopbits = 1
