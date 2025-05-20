@@ -3,7 +3,7 @@ extends Node
 var configFilePath = "res://ressource/configFiles/"
 var structure_list = {}
 var decoration_list = {}
-var spot_list = []
+var spot_names = []
 var objects: Array
 
 class Spot_local:
@@ -25,8 +25,8 @@ func initListSpot() -> void:
 			new_spot.name = spot["name"]
 			new_spot.prefab = spot["prefab"]
 			new_spot.src = full_path
-			spot_list.append(new_spot)
-			print(spot_list[0].name)
+			spot_names.append(new_spot)
+			print(spot_names[0].name)
 
 
 func CreateNew (pos, path, src = null):

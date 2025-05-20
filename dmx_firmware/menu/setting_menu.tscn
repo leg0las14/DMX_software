@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://xrrnifldxknh"]
+[gd_scene load_steps=3 format=3 uid="uid://xrrnifldxknh"]
 
 [ext_resource type="Script" path="res://menu/menu_script/setting_menu.gd" id="1_e0c2i"]
 [ext_resource type="PackedScene" uid="uid://clbpsc1xe25dc" path="res://menu/arborescence.tscn" id="2_44jpm"]
-[ext_resource type="PackedScene" uid="uid://bq8aglcnlte1r" path="res://menu/list_spot_menu.tscn" id="2_rbh8w"]
 
 [node name="create_menu" type="Control"]
 layout_mode = 3
@@ -29,22 +28,25 @@ color = Color(0.392157, 0.392157, 0.392157, 1)
 [node name="parametre_list" type="ItemList" parent="window"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 66.0
-offset_right = -9.0
-offset_bottom = -53.0
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.123
+anchor_right = 0.977
+anchor_bottom = 0.901
+offset_left = -0.114
+offset_top = -0.174004
+offset_right = -0.053009
+offset_bottom = 0.261993
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="window"]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = -1
 anchor_right = 1.0
-offset_right = 2.0
-offset_bottom = 51.0
+anchor_bottom = 0.095
+offset_right = -1.0
+offset_bottom = -0.110004
 grow_horizontal = 2
 alignment = 1
 
@@ -77,13 +79,14 @@ text = "<"
 [node name="ColorRect" type="ColorRect" parent="window"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = -0.133
-anchor_right = 1.0
-anchor_bottom = 1.065
-offset_left = 10.0
-offset_top = 137.554
-offset_right = -9.0
-offset_bottom = -87.97
+anchor_left = 0.026
+anchor_top = 0.123
+anchor_right = 0.977
+anchor_bottom = 0.901
+offset_left = -0.114
+offset_top = -0.174004
+offset_right = -0.053009
+offset_bottom = 0.262024
 
 [node name="ScrollContainer" type="ScrollContainer" parent="window/ColorRect"]
 layout_mode = 1
@@ -117,16 +120,11 @@ offset_bottom = 37.0
 grow_vertical = 2
 text = ">"
 
-[node name="list_spot" parent="." instance=ExtResource("2_rbh8w")]
+[node name="list_spot" type="ColorRect" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.339
-offset_left = 753.563
-offset_top = 68.8719
-offset_right = 733.035
-offset_bottom = -160.128
-grow_horizontal = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]
 [connection signal="pressed" from="window/HBoxContainer/arbo_button" to="." method="_on_arbo_button_pressed"]

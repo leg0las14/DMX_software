@@ -18,8 +18,8 @@ func _ready() -> void:
 	retract_button_open = $"%retract_button_open"
 	spot_list = $"%list_spot"
 	parametre_list = $"%parametre_list"
-	
-	
+
+
 	retract_button_close.visible = false
 	spot_list.visible = false
 	param_button.modulate = Color(1, 0, 0, 1)
@@ -45,11 +45,6 @@ func _on_retract_button_open_pressed() -> void:
 func _on_retract_button_close_pressed() -> void:
 	window.visible = true
 	retract_button_close.visible = false
-
-func _input(event):
-	if event.is_action_pressed("ajout_container"):
-		var objet = Venv.selected_item_data
-		add_container(objet)
 
 func add_container(nom :String) -> void:
 	var arborescence_scene =load("res://menu/arborescence.tscn")

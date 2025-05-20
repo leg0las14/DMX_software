@@ -16,7 +16,6 @@ var menu_status
 var retract = false
 
 func _ready():
-	Venv.isMenu = true
 	spot_button = $"%spot_button"
 	structure_button = $"%structure_button"
 	decoration_button = $"%decoration_button"
@@ -32,18 +31,11 @@ func _ready():
 	retract_button_close.visible = false
 
 	list_items.clear()
-	items = ModelManager.spot_list
+	items = ModelManager.spot_names
 	for i in items:
 		list_items.add_item(i.name)
 	menu_status = MenuStatus.spot
 
-func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		Venv.isMenu = false;
-		queue_free()
-	if event.is_action_pressed("ui_accept"):
-		valider()
-		
 func _on_spot_button_pressed():
 	spot_button.modulate = Color(1, 0, 0, 1)
 	structure_button.modulate = Color(1, 1, 1, 1)
@@ -52,14 +44,14 @@ func _on_spot_button_pressed():
 	items = ModelManager.spot_list
 	list_items.clear()
 	for i in items:
-		list_items.add_item(i)
+		list_items.add_item(i.name)
 	menu_status = MenuStatus.spot
-	
+
 func _on_structure_button_pressed():
 	spot_button.modulate = Color(1, 1, 1, 1)
 	structure_button.modulate = Color(1, 0, 0, 1)
 	decoration_button.modulate = Color(1, 1, 1, 1)
-	
+
 	items = ModelManager.structure_list
 	list_items.clear()
 	for i in items:
@@ -79,7 +71,6 @@ func _on_decoration_button_pressed():
 
 
 func _on_exit_button_pressed():
-	Venv.isMenu=false
 	queue_free()
 
 
@@ -88,24 +79,14 @@ func _on_valid_button_pressed():
 
 func valider():
 	if list_items.is_anything_selected():
-		var item_title = list_items.get_item_text(list_items.get_selected_items()[0])
+		var item_index = list_items.get_selected_items()[0]
 		match menu_status:
 			MenuStatus.spot:
-				Venv.isCreatingSpot = true
-				for spot in ModelManager.spot_list:
-					if spot.name == item_title:
-						ModelManager.CreateNew(Vector3(0, 0, 0), spot.prefab, spot.src)
-						break
+				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.spot_names[item_index].prefab, ModelManager.spot_names[item_index].src)
 			MenuStatus.structure:
-				Venv.isCreatingStructure = true
-				Venv.spot = ModelManager.structure_list[item_title]
-				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.structure_list[item_title])
+				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.structure_list[item_index])
 			MenuStatus.decoration:
-				Venv.spot = ModelManager.decoration_list[item_title]
-				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.decoration_list[item_title])
-		Venv.isMenu = false
-
-
+				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.decoration_list[item_index])
 
 func _on_retract_button_open_pressed() -> void:
 	window.visible = false

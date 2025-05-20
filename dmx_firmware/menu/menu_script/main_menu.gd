@@ -10,8 +10,6 @@ var liste_menu:=[]
 @export var mainCamera:Node
 
 func _ready() -> void:
-	
-
 	add_menu("res://menu/add_element_menu.tscn")
 	add_menu("res://menu/setting_menu.tscn")
 
