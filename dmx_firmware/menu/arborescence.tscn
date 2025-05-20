@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://clbpsc1xe25dc"]
+
+[ext_resource type="Texture2D" uid="uid://bakaxdxplcapt" path="res://59254.png" id="1_oq3a0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2lc0l"]
+font_color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.155
+anchor_bottom = 0.151
+offset_right = -0.559998
+offset_bottom = 0.151993
+size_flags_vertical = 3
+
+[node name="Label_nom_spot" type="Label" parent="."]
+layout_mode = 2
+text = "titre"
+label_settings = SubResource("LabelSettings_2lc0l")
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+icon = ExtResource("1_oq3a0")
+flat = true
+expand_icon = true

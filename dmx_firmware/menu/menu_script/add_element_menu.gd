@@ -8,6 +8,7 @@ var retract_button_open
 var retract_button_close
 var window
 var items
+var selected_item_data = null
 
 enum MenuStatus {spot, structure, decoration}
 var menu_status
@@ -103,8 +104,6 @@ func valider():
 				Venv.spot = ModelManager.decoration_list[item_title]
 				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.decoration_list[item_title])
 		Venv.isMenu = false
-
-
 
 
 

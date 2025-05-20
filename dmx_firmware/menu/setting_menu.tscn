@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://xrrnifldxknh"]
+[gd_scene load_steps=4 format=3 uid="uid://xrrnifldxknh"]
 
 [ext_resource type="Script" path="res://menu/menu_script/setting_menu.gd" id="1_e0c2i"]
+[ext_resource type="PackedScene" uid="uid://clbpsc1xe25dc" path="res://menu/arborescence.tscn" id="2_44jpm"]
 [ext_resource type="PackedScene" uid="uid://bq8aglcnlte1r" path="res://menu/list_spot_menu.tscn" id="2_rbh8w"]
 
 [node name="create_menu" type="Control"]
@@ -73,6 +74,37 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "<"
 
+[node name="ColorRect" type="ColorRect" parent="window"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.133
+anchor_right = 1.0
+anchor_bottom = 1.065
+offset_left = 10.0
+offset_top = 137.554
+offset_right = -9.0
+offset_bottom = -87.97
+
+[node name="ScrollContainer" type="ScrollContainer" parent="window/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="V_BOX" type="VBoxContainer" parent="window/ColorRect/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" parent="window/ColorRect/ScrollContainer/V_BOX" instance=ExtResource("2_44jpm")]
+layout_mode = 2
+size_flags_horizontal = 3
+
 [node name="retract_button_close" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
@@ -90,10 +122,10 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.339
-offset_left = 13.0444
-offset_top = 132.753
-offset_right = -12.4836
-offset_bottom = -92.2469
+offset_left = 753.563
+offset_top = 68.8719
+offset_right = 733.035
+offset_bottom = -160.128
 grow_horizontal = 1
 
 [connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]
