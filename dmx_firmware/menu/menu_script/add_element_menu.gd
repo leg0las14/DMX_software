@@ -41,7 +41,7 @@ func _on_spot_button_pressed():
 	structure_button.modulate = Color(1, 1, 1, 1)
 	decoration_button.modulate = Color(1, 1, 1, 1)
 	
-	items = ModelManager.spot_list
+	items = ModelManager.spot_names
 	list_items.clear()
 	for i in items:
 		list_items.add_item(i.name)

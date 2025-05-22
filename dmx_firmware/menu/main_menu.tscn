@@ -53,6 +53,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Enregistrement"
 
+[node name="port_button" type="OptionButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
 [node name="Button5" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 icon = ExtResource("2_mm8c0")
@@ -62,4 +66,5 @@ icon = ExtResource("2_mm8c0")
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="item_selected" from="HBoxContainer/port_button" to="." method="_on_port_button_item_selected"]
 [connection signal="pressed" from="HBoxContainer/Button5" to="." method="_on_button_5_pressed"]

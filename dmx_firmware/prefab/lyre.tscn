@@ -239,6 +239,7 @@ skeleton = NodePath("")
 unique_name_in_owner = true
 transform = Transform3D(1000, 0, 0, 0, -8.74228e-05, -1000, 0, 1000, -8.74228e-05, 0, 116.39, -1.1125)
 light_energy = 16.0
+light_volumetric_fog_energy = 2.0
 spot_angle = 23.6218
 
 [node name="Area3D" type="Area3D" parent="."]

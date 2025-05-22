@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cj07lfi8yvxj2"]
 
 [ext_resource type="Script" path="res://scripts/simulation.gd" id="1_jdde4"]
-[ext_resource type="Script" path="res://scripts/Camera.gd" id="2_w3j86"]
+[ext_resource type="Script" path="res://scripts/class/global_class/Camera.gd" id="2_w3j86"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mhc4i"]
 
@@ -16,7 +16,10 @@ sky = SubResource("Sky_6w5fj")
 tonemap_mode = 2
 sdfgi_enabled = true
 sdfgi_use_occlusion = true
-volumetric_fog_density = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.5316
+volumetric_fog_albedo = Color(0.351563, 0.351563, 0.351563, 1)
+volumetric_fog_anisotropy = 0.9
 
 [node name="simulation" type="Node3D"]
 script = ExtResource("1_jdde4")

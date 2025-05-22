@@ -8,11 +8,8 @@ func _ready() -> void:
 	serial_port.baudrate = 115200
 	serial_port.bytesize = 8
 	serial_port.stopbits = 1
-
-	if serial_port.open():
-		print("❌ Échec de l'ouverture du port série.")
-	else:
-		print("✅ Port série ouvert avec succès.")
+	
+	open_port()
 
 func _process(delta: float) -> void:
 	if connectSerial():
@@ -61,3 +58,16 @@ func parseTrame(trame: String) -> PackedInt32Array:
 		valeurs.append(int(s))
 
 	return valeurs
+
+func get_port():
+	return serial_port.list_ports()
+
+func open_port(port_ = serial_port.port):
+	serial_port.port = port_
+	if serial_port.open():
+		print("❌ Échec de l'ouverture du port série.")
+	else:
+		print("✅ Port série ouvert avec succès.")
+
+func close_port():
+	serial_port.close()

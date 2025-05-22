@@ -22,8 +22,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not is_init:
 		return
+
 	if arche:
-		var raw_pan = dmx.getValue(0) # Valeur brute de 0 à 255
+		var raw_pan = dmx.getValue(0) # Pan : 0–255
 		var mapped_pan = map(raw_pan, 0, 255, pan_min, pan_max)
 		arche.rotation.y = deg_to_rad(mapped_pan)
 
@@ -33,7 +34,13 @@ func _process(delta: float) -> void:
 		pivot.rotation.x = deg_to_rad(mapped_tilt)
 
 	if light:
-		light.light_energy = float(dmx.getValue(2))
+		var intensity = float(dmx.getValue(2)) / 255.0
+		var r = float(dmx.getValue(3)) / 255.0
+		var g = float(dmx.getValue(4)) / 255.0
+		var b = float(dmx.getValue(5)) / 255.0
+		light.light_color = Color(r, g, b) * intensity
+		light.light_energy = intensity * 10.0
+
 
 func init(src):
 	src_file = src

@@ -13,7 +13,7 @@ func _ready() -> void:
 	add_menu("res://menu/add_element_menu.tscn")
 	add_menu("res://menu/setting_menu.tscn")
 
-	# récupère le bouton
+	# récupère les boutons
 
 	button1 = $HBoxContainer/Button
 	button2 = $HBoxContainer/Button2
@@ -25,6 +25,8 @@ func _ready() -> void:
 	button2.modulate = Color(1, 1, 1, 1)
 	button3.modulate = Color(1, 1, 1, 1)
 	button4.modulate = Color(1, 1, 1, 1)
+	
+	set_list_port()
 
 
 func _on_button_pressed():
@@ -73,3 +75,13 @@ func remove_alls_menu()->void:
 			remove_child(menu)
 			menu.queue_free()
 	liste_menu.clear()
+
+func set_list_port():
+	var port_list = SerialInterface.get_port()
+	for i in port_list:
+		$"%port_button".add_item(i)
+
+func _on_port_button_item_selected(index: int) -> void:
+	SerialInterface.close_port()
+	var port = $"%port_button".get_item_text($"%port_button".selected)
+	SerialInterface.open_port(port)
