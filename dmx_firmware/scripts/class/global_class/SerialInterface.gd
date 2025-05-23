@@ -3,15 +3,15 @@ extends Node
 var serial_port := SerialPort.new()
 var buffer_trame := ""
 
+
 func _ready() -> void:
 	serial_port.port = "/dev/ttyUSB0"
 	serial_port.baudrate = 115200
-	serial_port.bytesize = 8
-	serial_port.stopbits = 1
-	
+	serial_port.bytesize = SerialPort.BYTESIZE_8
+	serial_port.stopbits = SerialPort.StopBits.STOPBITS_1 
 	open_port()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if connectSerial():
 		processDMXInput()
 
@@ -60,7 +60,7 @@ func parseTrame(trame: String) -> PackedInt32Array:
 	return valeurs
 
 func get_port():
-	return serial_port.list_ports()
+	return SerialPort.list_ports()
 
 func open_port(port_ = serial_port.port):
 	serial_port.port = port_

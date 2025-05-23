@@ -19,7 +19,7 @@ func _ready() -> void:
 	pivot = $"%pivot tete"
 	light = $"%light"
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not is_init:
 		return
 

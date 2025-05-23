@@ -85,7 +85,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	camera_zoom_target = clamp(camera_zoom_target, 0, camera_zoom_steps)
 
 
-func _zoom(delta: float) -> void:
+func _zoom(_delta: float) -> void:
 	var zoom_factor = camera_zoom_target / camera_zoom_steps
 	zoom_factor = zoom_factor * zoom_factor * zoom_factor
 	camera.position.z = lerp(camera.position.z, zoom_factor * camera_zoom_steps, 0.1)

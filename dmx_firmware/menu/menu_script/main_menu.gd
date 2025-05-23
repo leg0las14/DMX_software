@@ -83,5 +83,5 @@ func set_list_port():
 
 func _on_port_button_item_selected(index: int) -> void:
 	SerialInterface.close_port()
-	var port = $"%port_button".get_item_text($"%port_button".selected)
+	var port = $"%port_button".get_item_text(index)
 	SerialInterface.open_port(port)
