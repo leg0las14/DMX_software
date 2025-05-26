@@ -86,10 +86,10 @@ anchor_left = 0.009
 anchor_top = 0.211
 anchor_right = 0.972
 anchor_bottom = 0.907
-offset_left = 673.803
-offset_top = -69.7315
-offset_right = 659.196
-offset_bottom = 13.8206
+offset_left = 9.54331
+offset_top = -53.7612
+offset_right = -5.06363
+offset_bottom = 29.7908
 
 [node name="Label" type="Label" parent="window/parametre"]
 layout_mode = 1
