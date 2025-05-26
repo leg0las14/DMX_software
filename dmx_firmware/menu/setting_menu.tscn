@@ -71,12 +71,12 @@ unique_name_in_owner = true
 layout_mode = 1
 anchor_left = 0.026
 anchor_top = 0.126
-anchor_right = 0.923
-anchor_bottom = 0.831
-offset_left = 2.93036
-offset_top = -8.0312
-offset_right = 2.99734
-offset_bottom = -8.3212
+anchor_right = 0.931
+anchor_bottom = 0.947
+offset_left = 2.886
+offset_top = -7.78799
+offset_right = -15.159
+offset_bottom = -0.485962
 
 [node name="parametre" type="ColorRect" parent="window"]
 unique_name_in_owner = true
@@ -86,10 +86,10 @@ anchor_left = 0.009
 anchor_top = 0.211
 anchor_right = 0.972
 anchor_bottom = 0.907
-offset_left = 6.499
-offset_top = -47.518
-offset_right = -0.108032
-offset_bottom = 0.0340271
+offset_left = 673.803
+offset_top = -69.7315
+offset_right = 659.196
+offset_bottom = 13.8206
 
 [node name="Label" type="Label" parent="window/parametre"]
 layout_mode = 1

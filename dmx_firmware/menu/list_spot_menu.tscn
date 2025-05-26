@@ -13,17 +13,23 @@ grow_vertical = 2
 script = ExtResource("1_1twco")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 334.0
-offset_bottom = 447.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.028
+anchor_bottom = 0.974
+offset_right = -0.100006
+offset_bottom = -0.0660095
 color = Color(0.197937, 0.197937, 0.197937, 1)
 
 [node name="ScrollContainer" type="ScrollContainer" parent="ColorRect"]
-layout_mode = 0
-offset_left = 18.0
-offset_top = 16.0
-offset_right = 380.0
-offset_bottom = 531.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.996
+offset_left = 1.0
+offset_top = -2.0
+offset_right = 0.00198364
+offset_bottom = -0.212036
 
 [node name="list_element" type="VBoxContainer" parent="ColorRect/ScrollContainer"]
 unique_name_in_owner = true
