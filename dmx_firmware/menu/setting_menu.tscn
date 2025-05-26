@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://xrrnifldxknh"]
+[gd_scene load_steps=4 format=3 uid="uid://xrrnifldxknh"]
 
 [ext_resource type="Script" path="res://menu/menu_script/setting_menu.gd" id="1_e0c2i"]
-[ext_resource type="PackedScene" uid="uid://clbpsc1xe25dc" path="res://menu/arborescence.tscn" id="2_44jpm"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_1dqul"]
-font_size = 20
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://bdr5b1635pg5k" path="res://menu/list_spot_menu.tscn" id="2_wi4qr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_km7db"]
 font_size = 18
@@ -33,21 +29,6 @@ offset_right = 389.0
 offset_bottom = -0.120056
 grow_vertical = 2
 color = Color(0.392157, 0.392157, 0.392157, 1)
-
-[node name="parametre_list" type="ItemList" parent="window"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.026
-anchor_top = 0.123
-anchor_right = 0.977
-anchor_bottom = 0.901
-offset_left = -0.114
-offset_top = -0.174004
-offset_right = -0.053009
-offset_bottom = 0.261993
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="window"]
 layout_mode = 1
@@ -85,48 +66,40 @@ grow_horizontal = 0
 grow_vertical = 2
 text = "<"
 
-[node name="ColorRect" type="ColorRect" parent="window"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.026
-anchor_top = 0.123
-anchor_right = 0.977
-anchor_bottom = 0.901
-offset_left = -0.114
-offset_top = -0.174004
-offset_right = -0.053009
-offset_bottom = 0.262024
-
-[node name="ScrollContainer" type="ScrollContainer" parent="window/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 44.0
-offset_bottom = -3.05176e-05
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-
-[node name="V_BOX" type="VBoxContainer" parent="window/ColorRect/ScrollContainer"]
+[node name="ListSpotMenu" parent="window" instance=ExtResource("2_wi4qr")]
 unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+layout_mode = 1
+anchor_left = 0.026
+anchor_top = 0.126
+anchor_right = 0.923
+anchor_bottom = 0.831
+offset_left = 2.93036
+offset_top = -8.0312
+offset_right = 2.99734
+offset_bottom = -8.3212
 
-[node name="HBoxContainer" parent="window/ColorRect/ScrollContainer/V_BOX" instance=ExtResource("2_44jpm")]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Label" type="Label" parent="window/ColorRect"]
+[node name="parametre" type="ColorRect" parent="window"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.098
-offset_right = -2.0
-offset_bottom = -0.0620041
-text = "Liste des spots"
-label_settings = SubResource("LabelSettings_1dqul")
+anchor_left = 0.009
+anchor_top = 0.211
+anchor_right = 0.972
+anchor_bottom = 0.907
+offset_left = 6.499
+offset_top = -47.518
+offset_right = -0.108032
+offset_bottom = 0.0340271
+
+[node name="Label" type="Label" parent="window/parametre"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.086
+offset_right = 0.109985
+offset_bottom = -0.0340004
+text = "Modifications"
+label_settings = SubResource("LabelSettings_km7db")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -141,31 +114,6 @@ offset_right = 18.0
 offset_bottom = 37.0
 grow_vertical = 2
 text = ">"
-
-[node name="list_spot" type="ColorRect" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.009
-anchor_top = 0.211
-anchor_right = 0.33
-anchor_bottom = 0.858
-offset_left = -0.333875
-offset_top = 0.0176392
-offset_right = -0.125885
-offset_bottom = -0.238342
-
-[node name="Label" type="Label" parent="list_spot"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.997
-anchor_bottom = 0.086
-offset_right = 0.109985
-offset_bottom = -0.0340004
-text = "Modifications"
-label_settings = SubResource("LabelSettings_km7db")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]
 [connection signal="pressed" from="window/HBoxContainer/arbo_button" to="." method="_on_arbo_button_pressed"]

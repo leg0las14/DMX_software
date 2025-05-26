@@ -36,7 +36,9 @@ func CreateNew (pos, path, src = null):
 	objectInstance.transform.origin = pos
 	get_tree().get_root().add_child(objectInstance)
 	objects.append(objectInstance)
-	print(objects)
+	var menus = get_tree().get_nodes_in_group("menu_list")
+	if menus.size() > 0:
+		menus[0].emit_signal("update_list_spot")
 
 func attachToObjetc(spot: Node3D, object: Node3D):
 	if spot.get_parent() != object:
