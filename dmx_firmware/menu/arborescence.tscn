@@ -7,14 +7,14 @@ font_color = Color(0, 0, 0, 1)
 
 [node name="HBoxContainer" type="HBoxContainer"]
 anchors_preset = -1
-anchor_right = 0.155
-anchor_bottom = 0.151
-offset_right = -0.559998
-offset_bottom = 0.151993
-size_flags_vertical = 3
+anchor_right = 0.38
+anchor_bottom = 0.137
+offset_right = -178.76
+offset_bottom = 0.223991
 
 [node name="Label_nom_spot" type="Label" parent="."]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "titre"
 label_settings = SubResource("LabelSettings_2lc0l")
 

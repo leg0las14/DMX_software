@@ -13,7 +13,6 @@ func update_list_spot_():
 	for child in container.get_children():
 		child.queue_free()
 
-	# Ensuite, recrée les éléments
 	for i in ModelManager.objects:
 		print(i)
 		var arbo = load("res://menu/arborescence.tscn")
