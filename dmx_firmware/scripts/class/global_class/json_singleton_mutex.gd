@@ -19,8 +19,9 @@ func getConfigFileList(path: String) -> Array:
 
 
 
-func writeJson() -> bool:
+func writeJson(val : String) -> bool:
 	mutex.lock()
+	# TODO : dev la méthode
 	mutex.unlock()
 	return true
 

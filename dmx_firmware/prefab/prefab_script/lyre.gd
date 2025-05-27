@@ -20,6 +20,9 @@ func _ready() -> void:
 	light = $"%light"
 
 func _process(_delta: float) -> void:
+	actu()
+
+func actu():
 	if not is_init:
 		return
 
@@ -40,7 +43,6 @@ func _process(_delta: float) -> void:
 		var b = float(dmx.getValue(5)) / 255.0
 		light.light_color = Color(r, g, b) * intensity
 		light.light_energy = intensity * 10.0
-
 
 func init(src):
 	src_file = src

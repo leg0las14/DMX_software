@@ -6,7 +6,6 @@ func _ready() -> void:
 	dmx_data = PackedByteArray()
 	dmx_data.resize(512)
 	dmx_data.fill(0)
-	print("New DMX instantiated")
 
 func getValue(pos: int) -> int:
 	if pos <= 511 and pos >=0:
