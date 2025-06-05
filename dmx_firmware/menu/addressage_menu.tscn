@@ -10,23 +10,28 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+metadata/_edit_horizontal_guides_ = [270.0, 342.0, 35.0, 324.0, 344.0, 653.0, 330.0]
+metadata/_edit_vertical_guides_ = [483.0, 468.0, 0.0]
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.418
-anchor_top = 0.059
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.463989
-offset_top = -0.232002
+offset_left = 1.46399
+offset_top = 35.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.408098, 0.616193, 0.79428, 1)
 
 [node name="ListSpotMenu" parent="." instance=ExtResource("1_c2fev")]
 layout_mode = 1
-offset_left = 1.0
-offset_top = 331.0
-offset_right = 143.136
-offset_bottom = 193.216
+anchor_left = 0.001
+anchor_top = 0.532
+anchor_right = 0.415
+anchor_bottom = 1.009
+offset_left = -1.152
+offset_top = -14.736
+offset_right = -10.08
+offset_bottom = 0.167969
