@@ -11,6 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_s5glb")
+metadata/_edit_vertical_guides_ = [1152.0, 776.0]
 
 [node name="ouvrir" type="Button" parent="."]
 unique_name_in_owner = true

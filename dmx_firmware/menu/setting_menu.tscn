@@ -17,6 +17,8 @@ grow_vertical = 2
 scale = Vector2(0.996599, 1.00186)
 mouse_filter = 2
 script = ExtResource("1_e0c2i")
+metadata/_edit_vertical_guides_ = [-1.0, 390.0, 41.0, 346.0, 390.0]
+metadata/_edit_horizontal_guides_ = [611.0, 72.0, 407.0, 340.0]
 
 [node name="window" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -58,10 +60,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -35.5
-offset_right = 9.0
-offset_bottom = 38.5
+offset_left = -18.7408
+offset_top = -37.5625
+offset_right = -0.740753
+offset_bottom = 36.4375
 grow_horizontal = 0
 grow_vertical = 2
 text = "<"
@@ -86,10 +88,10 @@ anchor_left = 0.009
 anchor_top = 0.211
 anchor_right = 0.972
 anchor_bottom = 0.907
-offset_left = 9.54331
-offset_top = -53.7612
-offset_right = -5.06363
-offset_bottom = 29.7908
+offset_left = 9.499
+offset_top = -53.518
+offset_right = -7.108
+offset_bottom = 30.0341
 
 [node name="Label" type="Label" parent="window/parametre"]
 layout_mode = 1
@@ -106,12 +108,13 @@ vertical_alignment = 1
 [node name="retract_button_close" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -37.0
-offset_right = 18.0
-offset_bottom = 37.0
+anchors_preset = -1
+anchor_top = 0.453
+anchor_bottom = 0.453
+offset_left = -1.00341
+offset_top = 8.89346
+offset_right = 16.9966
+offset_bottom = 82.8935
 grow_vertical = 2
 text = ">"
 
