@@ -3,13 +3,24 @@ extends Node
 var configFilePath = "res://ressource/configFiles/"
 var structure_list = {}
 var decoration_list = {}
-var spot_names = []
-var objects: Array
 
-class Spot_local:
+
+var spot_names = []
+class Spot_list:
 	var name
 	var prefab
 	var src
+
+
+var sceneEntities: Array
+class Spot_instance:
+	var id
+	var instance
+	var name
+	var prefab
+	var configFile
+
+var lastId = 0
 
 func _ready() -> void:
 	initListSpot()
@@ -20,7 +31,7 @@ func initListSpot() -> void:
 		var full_path = configFilePath + i
 		var data = JsonSingletonMutex.readJson(full_path)
 		if "spot" in data:
-			var new_spot = Spot_local.new()
+			var new_spot = Spot_list.new()
 			var spot = data["spot"]
 			new_spot.name = spot["name"]
 			new_spot.prefab = spot["prefab"]
@@ -28,17 +39,33 @@ func initListSpot() -> void:
 			spot_names.append(new_spot)
 			print(spot_names[0].name)
 
+func CreateNew (pos, prefab, configFile = null):
 
-func CreateNew (pos, path, src = null):
-	var object = load(path)
+	#Création de l'instance du spot
+	var object = load(prefab)
 	var objectInstance = object.instantiate()
-	objectInstance.init(src)
+
+	#Initialisation du spot en fonction du configFile
+	objectInstance.init(configFile)
+
+	#Mettre à la position et afficher
 	objectInstance.transform.origin = pos
 	get_tree().get_root().add_child(objectInstance)
-	objects.append(objectInstance)
+
+	#Création de l'objet de Spot_Instance contenant toutes les infos de l'instance
+	var objectClasse = Spot_instance.new()
+	objectClasse.id = lastId
+	objectClasse.prefab = prefab
+	objectClasse.configFile = configFile
+	objectClasse.instance = objectInstance
+	objectClasse.name = objectInstance.name_+ "_" + str(lastId)
+	print(objectClasse.name)
+	sceneEntities.append(objectClasse)
+	#Envoie du signal pour mettre à jour la liste de spot
 	var menus = get_tree().get_nodes_in_group("menu_list")
 	if menus.size() > 0:
 		menus[0].emit_signal("update_list_spot")
+	lastId -=-1
 
 func attachToObjetc(spot: Node3D, object: Node3D):
 	if spot.get_parent() != object:
