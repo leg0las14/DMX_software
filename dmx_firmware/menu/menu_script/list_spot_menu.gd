@@ -16,6 +16,6 @@ func update_list_spot_():
 	for i in ModelManager.sceneEntities:
 		var arbo = load("res://menu/arborescence.tscn")
 		var arbo_i = arbo.instantiate()
-		var label = arbo_i.get_node('Label_nom_spot')
-		label.text = i.name
+		arbo_i.setName(i.name)
+		arbo_i.setId(i.id)
 		container.add_child(arbo_i)

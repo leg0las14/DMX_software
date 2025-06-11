@@ -40,11 +40,10 @@ func initListSpot() -> void:
 			print(spot_names[0].name)
 
 func CreateNew (pos, prefab, configFile = null):
-
 	#Création de l'instance du spot
 	var object = load(prefab)
 	var objectInstance = object.instantiate()
-
+	
 	#Initialisation du spot en fonction du configFile
 	objectInstance.init(configFile)
 
@@ -66,6 +65,12 @@ func CreateNew (pos, prefab, configFile = null):
 	if menus.size() > 0:
 		menus[0].emit_signal("update_list_spot")
 	lastId -=-1
+
+func DelElement(id):
+	for i in sceneEntities:
+		if i.id == id:
+			i.instance.queue_free()
+			sceneEntities.erase(i)
 
 func attachToObjetc(spot: Node3D, object: Node3D):
 	if spot.get_parent() != object:
