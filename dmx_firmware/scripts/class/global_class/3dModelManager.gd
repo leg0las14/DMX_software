@@ -78,10 +78,12 @@ func selectedElement(id_:int):
 	selectElement = id_
 	for i in sceneEntities:
 		if i.id == id_ :
-			i.arbo_instance.select()
+			if i.arbo_instance:
+				i.arbo_instance.select()
 			i.instance.select()
 		else:
-			i.arbo_instance.unselect()
+			if i.arbo_instance:
+				i.arbo_instance.unselect()
 			i.instance.unselect()
 
 func getSelectedElement():
