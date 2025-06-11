@@ -16,6 +16,8 @@ grow_vertical = 2
 scale = Vector2(0.996599, 1.00186)
 mouse_filter = 2
 script = ExtResource("1_q72hl")
+metadata/_edit_vertical_guides_ = [762.0]
+metadata/_edit_horizontal_guides_ = [334.0]
 
 [node name="window" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -24,21 +26,22 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -349.0
+offset_left = -394.0
 offset_top = 62.0
-offset_right = 7.0
+offset_right = -3.0
 offset_bottom = -63.0
 grow_horizontal = 0
 grow_vertical = 2
-color = Color(0.392157, 0.392157, 0.392157, 1)
+color = Color(0.411765, 0.360784, 0.52549, 1)
 
 [node name="list_items" type="ItemList" parent="window"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
+offset_left = 18.0
 offset_top = 52.0
+offset_right = -5.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -81,9 +84,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -4.0
-offset_top = -8.0
-offset_right = 4.0
+offset_left = -31.5
+offset_top = -31.0
+offset_right = 31.5
 grow_horizontal = 2
 grow_vertical = 0
 text = "Valider"
@@ -91,30 +94,34 @@ text = "Valider"
 [node name="retract_button_open" type="Button" parent="window"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = -1
+anchor_left = 0.019
 anchor_top = 0.5
+anchor_right = 0.019
 anchor_bottom = 0.5
-offset_left = -6.30066
-offset_top = -35.5365
-offset_right = 11.6993
-offset_bottom = 38.4635
+offset_left = -7.85252
+offset_top = -37.0328
+offset_right = 10.1474
+offset_bottom = 36.9672
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.380392, 0.686275, 1)
 text = ">"
 
 [node name="retract_button_close" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.99
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.99
 anchor_bottom = 0.5
-offset_left = -14.1301
-offset_top = -36.5347
-offset_right = 3.86987
-offset_bottom = 37.4653
+offset_left = -9.63403
+offset_top = -37.5328
+offset_right = 8.36597
+offset_bottom = 36.4672
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.380392, 0.686275, 1)
 text = "<"
 
 [connection signal="pressed" from="window/MarginContainer/HBoxContainer/spot_button" to="." method="_on_spot_button_pressed"]

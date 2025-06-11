@@ -17,6 +17,7 @@ grow_vertical = 2
 scale = Vector2(0.996599, 1.00186)
 mouse_filter = 2
 script = ExtResource("1_e0c2i")
+metadata/_edit_vertical_guides_ = [-945.0, -594.0]
 
 [node name="window" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -24,11 +25,11 @@ layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.11
 anchor_bottom = 0.94
-offset_top = -0.280006
+offset_top = -0.411819
 offset_right = 389.0
-offset_bottom = -0.120056
+offset_bottom = -0.251892
 grow_vertical = 2
-color = Color(0.392157, 0.392157, 0.392157, 1)
+color = Color(0.410168, 0.35957, 0.527244, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="window"]
 layout_mode = 1
@@ -58,38 +59,40 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -35.5
-offset_right = 9.0
-offset_bottom = 38.5
+offset_left = -18.7408
+offset_top = -37.5625
+offset_right = -0.740753
+offset_bottom = 36.4375
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.21782, 0.38192, 0.684788, 1)
 text = "<"
 
 [node name="ListSpotMenu" parent="window" instance=ExtResource("2_wi4qr")]
 unique_name_in_owner = true
 layout_mode = 1
-anchor_left = 0.026
-anchor_top = 0.126
-anchor_right = 0.931
-anchor_bottom = 0.947
-offset_left = 2.886
-offset_top = -7.78799
-offset_right = -15.159
-offset_bottom = -0.485962
+anchor_left = 0.054
+anchor_top = 0.13
+anchor_right = 0.933
+anchor_bottom = 0.967
+offset_left = -0.00600052
+offset_top = 0.0600052
+offset_right = 0.0629883
+offset_bottom = -0.245972
 
 [node name="parametre" type="ColorRect" parent="window"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.009
-anchor_top = 0.211
-anchor_right = 0.972
-anchor_bottom = 0.907
-offset_left = 9.54331
-offset_top = -53.7612
-offset_right = -5.06363
-offset_bottom = 29.7908
+anchor_left = 0.054
+anchor_top = 0.132
+anchor_right = 0.933
+anchor_bottom = 0.967
+offset_left = -0.00600052
+offset_top = -1.01599
+offset_right = 0.0629883
+offset_bottom = -1.24597
+color = Color(0.713726, 0.619608, 0.847059, 1)
 
 [node name="Label" type="Label" parent="window/parametre"]
 layout_mode = 1
@@ -106,13 +109,15 @@ vertical_alignment = 1
 [node name="retract_button_close" type="Button" parent="."]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -37.0
-offset_right = 18.0
-offset_bottom = 37.0
+anchors_preset = -1
+anchor_top = 0.453
+anchor_bottom = 0.453
+offset_left = -1.00341
+offset_top = 8.89346
+offset_right = 16.9966
+offset_bottom = 82.8935
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.380392, 0.686275, 1)
 text = ">"
 
 [connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]

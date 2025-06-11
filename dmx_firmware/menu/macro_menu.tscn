@@ -11,6 +11,8 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_s5glb")
+metadata/_edit_vertical_guides_ = [1152.0, 776.0]
+metadata/_edit_horizontal_guides_ = [314.0]
 
 [node name="ouvrir" type="Button" parent="."]
 unique_name_in_owner = true
@@ -20,11 +22,13 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -18.0
-offset_top = -47.0
-offset_bottom = 17.0
+offset_left = -20.0
+offset_top = -43.0
+offset_right = -2.0
+offset_bottom = 21.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.380392, 0.686275, 1)
 text = "<"
 
 [node name="window" type="ColorRect" parent="."]
@@ -35,8 +39,8 @@ anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 0.878
 offset_left = -238.0
-offset_top = 57.0
-offset_bottom = 0.0559692
+offset_top = 58.0
+offset_bottom = 1.05597
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.392157, 0.392157, 0.392157, 1)
@@ -47,11 +51,12 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = -9.0
-offset_top = -34.0
-offset_right = 9.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = -38.0
+offset_right = 20.0
+offset_bottom = 36.0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.219608, 0.380392, 0.686275, 1)
 text = ">"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="window"]
