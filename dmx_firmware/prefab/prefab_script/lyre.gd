@@ -21,8 +21,10 @@ func _ready() -> void:
 	pivot = $"%pivot tete"
 	light = $"%light"
 
+
 func _process(_delta: float) -> void:
 	actu()
+	super._process(_delta)
 
 func actu():
 	if not is_init:
@@ -61,6 +63,10 @@ func init(src):
 
 	is_init = true
 
-
 func map(x: int, in_min: int, in_max: int, out_min: float, out_max: float) -> float:
 	return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+
+
+func _on_area_3d_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if event.is_action_pressed("left_mouse"):
+		ModelManager.selectedElement(id)

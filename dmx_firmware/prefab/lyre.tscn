@@ -247,3 +247,5 @@ spot_angle = 23.6218
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(0.969765, 0, 0, 0, 0.969765, 0, 0, 0, 0.969765, 0.000396729, 0.113953, -0.000366211)
 shape = SubResource("BoxShape3D_5th32")
+
+[connection signal="input_event" from="Area3D" to="." method="_on_area_3d_input_event"]

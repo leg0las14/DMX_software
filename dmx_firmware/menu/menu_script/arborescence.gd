@@ -11,3 +11,11 @@ func setId(id_ : int):
 func _on_dell_button_pressed() -> void:
 	ModelManager.DelElement(id)
 	queue_free()
+
+
+func select():
+	print("trouvé")
+	$"%Label_nom_spot".add_theme_color_override("font_color", Color.RED)
+
+func unselect():
+	$"%Label_nom_spot".add_theme_color_override("font_color", Color.WHITE)

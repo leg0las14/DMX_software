@@ -48,12 +48,6 @@ func _move(delta: float) -> void:
 			translate_object_local(v.normalized() * delta * move_speed)
 
 	last_mouse_pos_move = get_viewport().get_mouse_position()
-	if Input.is_action_pressed("camera_move_right"):
-		var forward = -transform.basis.x
-		position += forward * speedx * delta
-	if Input.is_action_pressed("camera_move_left"):
-		var forward = +transform.basis.x 
-		position += forward * speedx * delta
 
 func _rotate(delta: float) -> void:
 	if mouse_pressed and !shift:

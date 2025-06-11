@@ -18,4 +18,10 @@ func update_list_spot_():
 		var arbo_i = arbo.instantiate()
 		arbo_i.setName(i.name)
 		arbo_i.setId(i.id)
+		if i.id == ModelManager.getSelectedElement():
+			print("id trouvé")
+			arbo_i.select()
+		else:
+			arbo_i.unselect()
+		i.arbo_instance = arbo_i
 		container.add_child(arbo_i)

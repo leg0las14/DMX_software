@@ -19,8 +19,10 @@ class Spot_instance:
 	var name
 	var prefab
 	var configFile
+	var arbo_instance
 
 var lastId = 0
+var selectElement
 
 func _ready() -> void:
 	initListSpot()
@@ -46,7 +48,7 @@ func CreateNew (pos, prefab, configFile = null):
 	
 	#Initialisation du spot en fonction du configFile
 	objectInstance.init(configFile)
-
+	objectInstance.setId(lastId)
 	#Mettre à la position et afficher
 	objectInstance.transform.origin = pos
 	get_tree().get_root().add_child(objectInstance)
@@ -58,7 +60,6 @@ func CreateNew (pos, prefab, configFile = null):
 	objectClasse.configFile = configFile
 	objectClasse.instance = objectInstance
 	objectClasse.name = objectInstance.name_+ "_" + str(lastId)
-	print(objectClasse.name)
 	sceneEntities.append(objectClasse)
 	#Envoie du signal pour mettre à jour la liste de spot
 	var menus = get_tree().get_nodes_in_group("menu_list")
@@ -66,11 +67,26 @@ func CreateNew (pos, prefab, configFile = null):
 		menus[0].emit_signal("update_list_spot")
 	lastId -=-1
 
-func DelElement(id):
+func DelElement(id:int):
 	for i in sceneEntities:
 		if i.id == id:
 			i.instance.queue_free()
 			sceneEntities.erase(i)
+
+
+func selectedElement(id_:int):
+	selectElement = id_
+	for i in sceneEntities:
+		if i.id == id_ :
+			i.arbo_instance.select()
+			i.instance.select()
+		else:
+			i.arbo_instance.unselect()
+			i.instance.unselect()
+
+func getSelectedElement():
+	return selectElement
+
 
 func attachToObjetc(spot: Node3D, object: Node3D):
 	if spot.get_parent() != object:
