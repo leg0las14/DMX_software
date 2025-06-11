@@ -1,0 +1,36 @@
+{
+  "spot": {
+	"name": "LMH350LED",
+	"prefab": "res://prefab/lyre.tscn",
+	"movement":{
+		"pan_max": 540,
+		"pan_min": 0,
+		"tilt_max": -170,
+		"tilt_min": -10
+	  },
+	"colors": [
+	  {
+		"nom": "Rouge",
+		"codeHex": "#FF0000"
+	  },
+	  {
+		"nom": "Vert",
+		"codeHex": "#00FF00"
+	  },
+	  {
+		"nom": "Bleu",
+		"codeHex": "#0000FF"
+	  },
+	  {
+		"nom": "Jaune",
+		"codeHex": "#FFFF00"
+	  },
+	  {
+		"nom": "Violet",
+		"codeHex": "#800080"
+	  }
+	],
+	"pan": "180",
+	"tilt": "360"
+  }
+}

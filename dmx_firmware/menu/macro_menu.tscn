@@ -12,7 +12,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_s5glb")
 metadata/_edit_vertical_guides_ = [1152.0, 776.0]
-metadata/_edit_horizontal_guides_ = [314.0]
+metadata/_edit_horizontal_guides_ = [58.0, 648.0, 590.0, 325.0]
 
 [node name="ouvrir" type="Button" parent="."]
 unique_name_in_owner = true
@@ -40,21 +40,20 @@ anchor_right = 1.0
 anchor_bottom = 0.878
 offset_left = -238.0
 offset_top = 58.0
-offset_bottom = 1.05597
+offset_bottom = 21.056
 grow_horizontal = 0
 grow_vertical = 2
-color = Color(0.392157, 0.392157, 0.392157, 1)
+color = Color(0.411765, 0.360784, 0.52549, 1)
 
 [node name="fermer" type="Button" parent="window"]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 2.0
-offset_top = -38.0
-offset_right = 20.0
-offset_bottom = 36.0
+anchors_preset = -1
+anchor_top = 0.502
+anchor_bottom = 0.502
+offset_top = -37.064
+offset_right = 18.0
+offset_bottom = 36.936
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.219608, 0.380392, 0.686275, 1)
 text = ">"

@@ -83,6 +83,9 @@ func valider():
 		match menu_status:
 			MenuStatus.spot:
 				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.spot_names[item_index].prefab, ModelManager.spot_names[item_index].src)
+				print(ModelManager.spot_names[item_index].prefab)
+				print(ModelManager.spot_names[item_index].src)
+				print(ModelManager.spot_names[item_index].name)
 			MenuStatus.structure:
 				ModelManager.CreateNew(Vector3(0, 0, 0), ModelManager.structure_list[item_index])
 			MenuStatus.decoration:
