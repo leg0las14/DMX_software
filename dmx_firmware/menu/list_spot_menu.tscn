@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdr5b1635pg5k"]
+[gd_scene load_steps=3 format=3 uid="uid://bdr5b1635pg5k"]
 
 [ext_resource type="Script" path="res://menu/menu_script/list_spot_menu.gd" id="1_1twco"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lwxro"]
+font_size = 18
+font_color = Color(0, 0, 0, 1)
 
 [node name="ListSpotMenu" type="Control"]
 layout_mode = 3
@@ -29,7 +33,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 14.0
-offset_top = 30.0
+offset_top = 41.0
 offset_right = -10.0
 offset_bottom = -12.0
 
@@ -37,3 +41,16 @@ offset_bottom = -12.0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.997
+anchor_bottom = 0.053
+offset_left = 1.0
+offset_top = 7.0
+offset_right = -0.0250244
+offset_bottom = 17.673
+text = "Arborescence"
+label_settings = SubResource("LabelSettings_lwxro")
+horizontal_alignment = 1

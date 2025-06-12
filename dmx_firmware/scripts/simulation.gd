@@ -6,6 +6,7 @@ func _ready():
 	env = $"%WorldEnvironment"
 
 	add_menu("res://menu/main_menu.tscn")
+	print("new scene")
 
 func add_menu(menu_path: String):
 	var menu = load(menu_path).instantiate()

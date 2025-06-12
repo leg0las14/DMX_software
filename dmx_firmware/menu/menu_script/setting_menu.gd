@@ -18,12 +18,12 @@ func _ready() -> void:
 	parametre_list = $"%parametre"
 
 	retract_button_close.visible = false
-	spot_list.visible = false
-	parametre_list.visible = true
+	spot_list.visible = true
+	parametre_list.visible = false
 	
-	arbo_button.modulate = Color(1, 1, 1, 1)
-	param_button.modulate = Color(1, 0, 0, 1)
-	Simulation.changeFog(0)
+	arbo_button.modulate = Color(1, 0, 0, 1)
+	param_button.modulate = Color(1, 1, 1, 1)
+	get_parent().get_parent().changeFog(0)
 
 func _on_param_button_pressed() -> void:
 	param_button.modulate = Color(1, 0, 0, 1)
@@ -45,4 +45,4 @@ func _on_retract_button_close_pressed() -> void:
 	retract_button_close.visible = false
 
 func _on_fog_slicer_value_changed(value: float) -> void:
-	Simulation.changeFog(value)
+	get_parent().get_parent().changeFog(value)
