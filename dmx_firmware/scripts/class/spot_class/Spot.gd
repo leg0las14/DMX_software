@@ -31,6 +31,10 @@ func _process(delta: float) -> void:
 			_input_dir.x -= 1
 		if Input.is_action_pressed("move_left"):
 			_input_dir.x += 1
+		if Input.is_action_pressed("move_up"):
+			_input_dir.y += 1
+		if Input.is_action_pressed("move_down"):
+			_input_dir.y -= 1
 
 		_input_dir = _input_dir.normalized()
 		var target_velocity = _input_dir * move_speed
