@@ -21,6 +21,7 @@ ModelManager="*res://scripts/class/global_class/3dModelManager.gd"
 JsonSingletonMutex="*res://scripts/class/global_class/json_singleton_mutex.gd"
 dmx="*res://scripts/class/global_class/dmx.gd"
 SerialInterface="*res://scripts/class/global_class/SerialInterface.gd"
+Simulation="*res://simulation.tscn"
 
 [dotnet]
 

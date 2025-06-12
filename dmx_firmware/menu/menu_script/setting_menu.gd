@@ -17,13 +17,13 @@ func _ready() -> void:
 	spot_list = $"%ListSpotMenu"
 	parametre_list = $"%parametre"
 
-
 	retract_button_close.visible = false
 	spot_list.visible = false
 	parametre_list.visible = true
 	
 	arbo_button.modulate = Color(1, 1, 1, 1)
 	param_button.modulate = Color(1, 0, 0, 1)
+	Simulation.changeFog(0)
 
 func _on_param_button_pressed() -> void:
 	param_button.modulate = Color(1, 0, 0, 1)
@@ -31,13 +31,11 @@ func _on_param_button_pressed() -> void:
 	spot_list.visible = false
 	parametre_list.visible = true
 
-
 func _on_arbo_button_pressed() -> void:
 	param_button.modulate = Color(1, 1, 1, 1)
 	arbo_button.modulate = Color(1, 0, 0, 1)
 	spot_list.visible = true
 	parametre_list.visible = false
-
 
 func _on_retract_button_open_pressed() -> void:
 	window.visible = false
@@ -45,3 +43,6 @@ func _on_retract_button_open_pressed() -> void:
 func _on_retract_button_close_pressed() -> void:
 	window.visible = true
 	retract_button_close.visible = false
+
+func _on_fog_slicer_value_changed(value: float) -> void:
+	Simulation.changeFog(value)

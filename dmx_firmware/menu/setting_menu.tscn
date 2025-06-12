@@ -19,8 +19,6 @@ grow_vertical = 2
 scale = Vector2(0.996599, 1.00186)
 mouse_filter = 2
 script = ExtResource("1_e0c2i")
-metadata/_edit_vertical_guides_ = [-945.0, -594.0, 310.0, 292.0]
-metadata/_edit_horizontal_guides_ = [610.0, 60.0, 600.0, 325.0]
 
 [node name="window" type="ColorRect" parent="."]
 unique_name_in_owner = true
@@ -97,17 +95,34 @@ offset_right = 2.33984
 offset_bottom = -2.61749
 color = Color(0.713726, 0.619608, 0.847059, 1)
 
-[node name="Label" type="Label" parent="window/parametre"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.997
-anchor_bottom = 0.086
-offset_right = 0.109985
-offset_bottom = -0.0340004
+[node name="VBoxContainer" type="VBoxContainer" parent="window/parametre"]
+layout_direction = 2
+layout_mode = 0
+offset_left = 2.0
+offset_right = 269.0
+offset_bottom = 46.0
+
+[node name="Label" type="Label" parent="window/parametre/VBoxContainer"]
+layout_mode = 2
 text = "Modifications"
 label_settings = SubResource("LabelSettings_km7db")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="window/parametre/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="fog_label" type="Label" parent="window/parametre/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Fumée"
+
+[node name="fog_slicer" type="HSlider" parent="window/parametre/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 0.5
+step = 0.01
 
 [node name="retract_button_close" type="Button" parent="."]
 unique_name_in_owner = true
@@ -125,4 +140,5 @@ text = ">"
 [connection signal="pressed" from="window/HBoxContainer/param_button" to="." method="_on_param_button_pressed"]
 [connection signal="pressed" from="window/HBoxContainer/arbo_button" to="." method="_on_arbo_button_pressed"]
 [connection signal="pressed" from="window/retract_button_open" to="." method="_on_retract_button_open_pressed"]
+[connection signal="value_changed" from="window/parametre/VBoxContainer/HBoxContainer/fog_slicer" to="." method="_on_fog_slicer_value_changed"]
 [connection signal="pressed" from="retract_button_close" to="." method="_on_retract_button_close_pressed"]

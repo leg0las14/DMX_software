@@ -25,6 +25,7 @@ volumetric_fog_anisotropy = 0.9
 script = ExtResource("1_jdde4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
 environment = SubResource("Environment_oobpt")
 
 [node name="CameraPivot" type="Node3D" parent="."]
