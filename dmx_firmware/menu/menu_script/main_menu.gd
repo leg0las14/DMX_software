@@ -37,6 +37,8 @@ func _on_button_pressed():
 	remove_alls_menu()
 	add_menu("res://menu/add_element_menu.tscn")
 	add_menu("res://menu/setting_menu.tscn")
+	ModelManager.setSpotCanMove(true)
+	ModelManager.setspotCanSelect(true)
 
 func _on_button_2_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
@@ -45,6 +47,9 @@ func _on_button_2_pressed():
 	button4.modulate = Color(1, 1, 1, 1)
 	remove_alls_menu()
 	add_menu("res://menu/addressage_menu.tscn")
+	ModelManager.setSpotCanMove(false)
+	ModelManager.setspotCanSelect(true)
+
 func _on_button_3_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
 	button2.modulate = Color(1, 1, 1, 1)
@@ -52,6 +57,9 @@ func _on_button_3_pressed():
 	button4.modulate = Color(1, 1, 1, 1)
 	remove_alls_menu()
 	add_menu("res://menu/macro_menu.tscn")
+	ModelManager.setSpotCanMove(false)
+	ModelManager.setspotCanSelect(false)
+
 func _on_button_4_pressed():
 	button1.modulate = Color(1, 1, 1, 1)
 	button2.modulate = Color(1, 1, 1, 1)
@@ -59,7 +67,8 @@ func _on_button_4_pressed():
 	button4.modulate = Color(1, 0, 0, 1)
 	remove_alls_menu()
 	add_menu("res://menu/enregistrement_menu.tscn")
-
+	ModelManager.setSpotCanMove(false)
+	ModelManager.setspotCanSelect(true)
 
 func _on_button_5_pressed() -> void:
 	if mainCamera and mainCamera.has_method("reset_camera"):

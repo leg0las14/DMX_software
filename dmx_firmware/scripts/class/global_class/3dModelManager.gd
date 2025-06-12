@@ -23,6 +23,8 @@ class Spot_instance:
 
 var lastId = 0
 var selectElement
+var spotCanMove_ = true
+var spotCanSelect_ = true
 
 func _ready() -> void:
 	initListSpot()
@@ -78,17 +80,27 @@ func selectedElement(id_:int):
 	selectElement = id_
 	for i in sceneEntities:
 		if i.id == id_ :
-			if i.arbo_instance:
-				i.arbo_instance.select()
+			#if i.arbo_instance:
+			i.arbo_instance.select()
 			i.instance.select()
 		else:
-			if i.arbo_instance:
-				i.arbo_instance.unselect()
+			i.arbo_instance.unselect()
 			i.instance.unselect()
 
 func getSelectedElement():
 	return selectElement
 
+func spotCanSelect():
+	return spotCanSelect_
+
+func setspotCanSelect(status:bool):
+	spotCanSelect_ = status
+
+func setSpotCanMove(status):
+	spotCanMove_ = status
+
+func spotCanMove() -> bool:
+	return spotCanMove_
 
 func attachToObjetc(spot: Node3D, object: Node3D):
 	if spot.get_parent() != object:

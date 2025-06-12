@@ -20,7 +20,7 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if isSelect:
+	if isSelect and ModelManager.spotCanMove():
 		_input_dir = Vector3.ZERO
 		
 		if Input.is_action_pressed("move_forward"):
