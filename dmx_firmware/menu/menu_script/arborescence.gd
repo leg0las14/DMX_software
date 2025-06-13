@@ -18,3 +18,6 @@ func select():
 
 func unselect():
 	$"%Label_nom_spot".add_theme_color_override("font_color", Color.WHITE)
+
+func _on_label_nom_spot_pressed() -> void:
+	ModelManager.selectedElement(id)
